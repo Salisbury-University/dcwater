@@ -1,0 +1,39 @@
+#ReportAnEmergency{ 
+font-family: 'Fira Sans', sans-serif;
+font-size: 28px;
+font-weight: 700;
+font-style: bold;
+color: #0075C9;
+line-height: 33.6px;
+align-content: left;
+display: flex;
+padding-left: 16px;
+}
+#step { 
+
+font-family: 'Fira Sans', sans-serif;
+font-size: 18px;
+font-style: normal;
+font-weight: 400;
+line-height: 22px;
+letter-spacing: 0em;
+text-align: left;
+display: flex;
+padding-left: 16px;
+
+
+
+
+ }
+ div{
+ 	white-space: normal;
+
+ }
+ hr{
+width: 65px;
+height: 1px;
+color: #0075C9 ;
+background-color: #0075C9;
+border-width: 0;
+margin-left: 16px;
+ }
