@@ -36,11 +36,9 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
     of the page. When editing this template, make sure the page has this because 
     some pages do not --->
 <hr align="left">
-<p>
-    
-</p>
 
 <!--- PUT CONTENT HERE---> 
+
 <div class="bottomNav">
 
 <button onclick="#" type="button"  class="prevButton"><span class="prevButtonText">Previous</span></button>
