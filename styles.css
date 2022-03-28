@@ -1,3 +1,8 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-size: 15px;
+}
 #ReportAnEmergency{ 
 font-family: 'Fira Sans', sans-serif;
 font-size: 28px;
@@ -20,14 +25,9 @@ letter-spacing: 0em;
 text-align: left;
 display: flex;
 padding-left: 16px;
-
-
-
-
  }
  div{
  	white-space: normal;
-
  }
  hr{
 width: 65px;
