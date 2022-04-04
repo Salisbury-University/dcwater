@@ -17,7 +17,7 @@ padding-left: 16px;
 #step { 
 
 font-family: 'Fira Sans', sans-serif;
-font-size: 18px;
+font-size: 20px;
 font-style: normal;
 font-weight: 400;
 line-height: 22px;
@@ -31,9 +31,329 @@ padding-left: 16px;
  }
  hr{
 width: 65px;
-height: 1px;
+height: 2px;
 color: #0075C9 ;
 background-color: #0075C9;
 border-width: 0;
 margin-left: 16px;
  }
+
+.bold{ 
+position: static;
+width: 111px;
+height: 24px;
+left: 0px;
+top: 0px;
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height */
+
+align-items: center;
+
+/* Darker grey */
+
+color: #2D2D2D;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin-top: 40px;
+
+padding-left: 16px;
+
+
+
+  }
+
+.greyButton{
+
+
+left: 0%;
+right: 0%;
+top: 0%;
+bottom: 0%;
+
+/* Primary_Blue */
+
+border: 1.5px solid #3580C0;
+box-sizing: border-box;
+border-radius: 5px;
+margin-left: 16px;
+margin-right: 4px;
+width: 161px;
+height: 41px;
+background-color: white;
+}
+
+.greyButtonText{
+font-family: 'Avenir';
+font-style: normal;
+font-weight: 900;
+font-size: 18px;
+line-height: 120%;
+/* identical to box height, or 22px */
+
+display: flex;
+align-items: center;
+
+/* Dark grey */
+
+color: #4A4A4A;
+
+}
+
+.left{
+    left: 33.54%;
+right: 6.21%;
+top: 27.08%;
+bottom: 27.08%;
+
+}
+
+.right{
+left: 38.52%;
+right: 9.02%;
+top: 27.08%;
+bottom: 27.08%;
+
+
+
+}
+
+.descriptionBox{
+
+position: static;
+width: 327px;
+height: 105px;
+left: 8px;
+top: 8px;
+
+/* Small text */
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+color: black;
+
+
+
+/* Inside auto layout */
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 1;
+margin: 10px 0px;
+border-radius: 5px;
+border-color: black;
+}
+
+.smallText{
+position: static;
+width: 343px;
+height: 32px;
+left: 0px;
+top: 0px;
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 13px;
+line-height: 16px;
+display: flex;
+align-items: center;
+
+/* Dark / Dark 1 */
+
+color: #3A3A3C;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 1;
+margin: 0px 2px;
+margin-left: 16px;
+
+}
+
+.regText{
+
+position: static;
+width: 340px;
+height: 48px;
+left: 0px;
+top: 0px;
+
+/* Body */
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+display: flex;
+align-items: center;
+
+/* Dark / Dark 1 */
+
+color: #3A3A3C;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+margin: 20px 0px;
+margin-left: 16px;
+
+
+
+
+}
+
+.checkBox{
+width: 24px;
+height: 24px;
+border: 1px solid #C7C9D9;
+box-sizing: border-box;
+border-radius: 4px;
+
+
+
+
+
+}
+
+.checkLabel{
+    display:inline-block; block;
+
+position: static;
+width: 77px;
+height: 24px;
+
+
+/* Small text */
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+/* Dark grey */
+
+color: #4A4A4A;
+
+
+/* Inside auto layout */
+
+
+}
+
+.checkboxes label {
+
+  display: inline-block;
+  padding-right: 20px;
+  white-space: nowrap;
+}
+.checkboxes input {
+  width: 24px;
+height: 24px;
+border: 1px solid #C7C9D9;
+box-sizing: border-box;
+border-radius: 4px;
+  vertical-align: middle;
+  background-color: #F2F2F5;
+  color: #F2F2F5;
+}
+.checkboxes label span {
+  vertical-align: middle;
+  width: 77px;
+  height: 24px;
+
+
+/* Small text */
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+
+/* Dark grey */
+
+color: #4A4A4A;
+
+}
+
+.boxLabel{
+  
+
+
+/* Body */
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 24px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+
+/* Dark grey */
+
+color: #4A4A4A;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+
+}
+
+.tBox{
+    position: static;
+width: 326px;
+height: 19px;
+left: 8px;
+top: 8px;
+
+/* Small text */
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+color: #BFBFBF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+margin-top: 10px;
+color: black;
+font-size: 16px;
+
+}
