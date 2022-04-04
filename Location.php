@@ -10,7 +10,7 @@
 <!--- START OF NAVBAR---> 
 <nav>
         <ul>
-    <li><a href="https://dcwater.com/" id="image"><img src="dcWaterLogo.png"></a></li>
+    <li><a href="https://dcwater.com/" id="image"><img src="Images/dcWaterLogo.png"></a></li>
     <li><a href="#"><img src="Images/searchIcon.png"></a></li>
     <li><a href="#"><img src="Images/menuIcon.png"></a></li>
         </ul>
