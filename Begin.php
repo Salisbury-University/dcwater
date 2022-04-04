@@ -13,8 +13,8 @@
 <nav>
     <ul>
     <li><a href="https://dcwater.com/" id="image"><img src="dcWaterLogo.png"></a></li>
-    <li><a href="#"><img src="searchIcon.png"></a></li>
-    <li><a href="#"><img src="menuIcon.png"></a></li>
+    <li><a href="#"><img src="Images/searchIcon.png"></a></li>
+    <li><a href="#"><img src="Images/menuIcon.png"></a></li>
         </ul>
 
 </nav>
@@ -24,7 +24,7 @@
 </div>
 
 
-<img img src="Icon.png"class="Water-Icon">
+<img img src="Images/Icon.png"class="Water-Icon">
 
 <div class="frame52"></div>
 
@@ -62,7 +62,7 @@ All fields marked with an asterisk (*) on the form are required.
 
 <button onclick="#" type="button"  class="prevButton"><span class="prevButtonText">Track Status</span></button>
 <button onclick="#" type="button" class="nextButton"><span class="nextButtonText">Start Report
-<img img src="ArrowWhite.png"class="Arrow-White">    
+<img img src="Images/ArrowWhite.png"class="Arrow-White">    
 </span></button>
 
 </div>

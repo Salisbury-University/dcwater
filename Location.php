@@ -11,8 +11,8 @@
 <nav>
         <ul>
     <li><a href="https://dcwater.com/" id="image"><img src="dcWaterLogo.png"></a></li>
-    <li><a href="#"><img src="searchIcon.png"></a></li>
-    <li><a href="#"><img src="menuIcon.png"></a></li>
+    <li><a href="#"><img src="Images/searchIcon.png"></a></li>
+    <li><a href="#"><img src="Images/menuIcon.png"></a></li>
         </ul>
 </nav>
 <!--- END OF NAVBAR ---> 
@@ -34,14 +34,14 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 </div>
 <div>
 <input type="text" class="InputLocation" placeholder="Enter Location..."/>
-<img src="searchIcon.png" width=10/>
+<img src="Images/searchIcon.png" width=10/>
 </div>
 
 <div>
 <button onclick="#" type="button"  class="UseLocButton"><span class="LocButtonText">Use my location</span>
-<img src="MapArrow.png"/></button>
+<img src="Images/MapArrow.png"/></button>
 <button onclick="#" type="button"   class="DropPinButton"><span class="LocButtonText">Drop a Pin</span>
-<img src="MapPin.png"/></button>
+<img src="Images/MapPin.png"/></button>
 
 </div>
 
@@ -51,12 +51,12 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 
 <div class="bottomNav">
 <button onclick="#" type="button"  class="prevButton"><span class="prevButtonText">
-<img img src="ArrowBlue.png"class="Arrow-Blue"> 
+<img img src="Images/ArrowBlue.png"class="Arrow-Blue"> 
 &nbsp &nbsp &nbsp Back</span></button>
 <button onclick="#" type="button" class="nextButton"><span class="nextButtonText">
 &nbsp &nbsp &nbsp
 Next &nbsp
-<img img src="ArrowBlack.png"class="Arrow-Black"></span></button>
+<img img src="Images/ArrowBlack.png"class="Arrow-Black"></span></button>
 
 </div>
 </body>
