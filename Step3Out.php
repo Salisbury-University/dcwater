@@ -16,7 +16,7 @@ height: 29px;
 left: 0px;
 top: 0px;
 
-font-family: 'Fira Sans';
+font-family: 'Fira Sans', sans-serif;
 font-style: normal;
 font-weight: 700;
 font-size: 24px;
@@ -38,6 +38,7 @@ font-size: 20px;
 }
 
 .button{
+font-family: 'Fira Sans', sans-serif;
 cursor: pointer;
 position: relative;
 width: 238px;
