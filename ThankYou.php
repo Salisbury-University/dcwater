@@ -31,7 +31,7 @@ text-align: center;
 .sometext{
 width: 343px;
 height: 86px;
-font-family: 'Fira Sans';
+font-family: 'Fira Sans', sans-serif;
 color: #2D2D2D;
 text-align: center;
 align-items: center;
@@ -43,6 +43,7 @@ font-weight: 700;
 }
 
 .button{
+font-family: 'Fira Sans', sans-serif;
 cursor: pointer;
 width: 201px;
 height: 17px;
