@@ -16,7 +16,7 @@ height: 29px;
 left: 0px;
 top: 0px;
 
-font-family: 'Fira Sans';
+font-family: 'Fira Sans', sans-serif;
 font-style: normal;
 font-weight: 700;
 font-size: 24px;
@@ -33,12 +33,14 @@ color: #2D2D2D;
 }
 
 .asterisk{
+font-family: 'Fira Sans', sans-serif;
 color: #D90514;
 font-size: 20px;
 }
 
 .button{
 cursor: pointer;
+font-family: 'Fira Sans', sans-serif;
 position: relative;
 width: 238px;
 height: 70px;
@@ -77,6 +79,7 @@ left: 25%;
 }
 
 .rando{
+font-family: 'Fira Sans', sans-serif;
 font-size: 16px;
 color: #2D2D2D;
 }
