@@ -8,40 +8,34 @@
   padding-top: 20px;
   margin-top: 20px;
   position: -webkit-fixed; /* Safari */  
+  
 
 
 }
 
 .prevButton{ 
-
+padding-left: 24px;
+padding-right: 24px;
 align-items: center;
-padding: 12px 24px;
 position: static;
-width: 127px;
+width: 100px;
 height: 45px;
-left: 16px;
-top: 15px;
 margin-bottom: 15px;
 margin-left: 16px;
-
 background: #FFFFFF;
 /* Blue/Blue DC Water */
 
 border: 1.5px solid #0075C9;
 border-radius: 6px;
 /* Inside auto layout */
-float: left;
-
- }
+}
 
  .nextButton{
 align-items: center;
-padding: 12px 24px;
+padding-left: 24px;
 position: static;
-width: 127px;
+width: 100px;
 height: 45px;
-right: 16px;
-top: 15px;
 margin-bottom: 15px;
 margin-right: 16px;
 
@@ -56,10 +50,7 @@ float: right;
  }
  .prevButtonText{
     position: static;
-width: 31px;
-height: 21px;
-left: calc(50% - 31px/2 + 10.5px);
-top: calc(50% - 21px/2);
+
 
 /* Button Small */
 
@@ -79,20 +70,11 @@ letter-spacing: 0.005em;
 
 color: #0075C9;
 
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 0px 5px;
-
 
  }
 
  .nextButtonText{
-position: static;
-width: 31px;
-height: 21px;
-left: calc(50% - 31px/2 - 10.5px);
-top: calc(50% - 21px/2);
+
 
 /* Button Small */
 
@@ -115,18 +97,14 @@ color: #FFFFFF;
 
 /* Inside auto layout */
 
-flex: none;
-order: 0;
-flex-grow: 0;
-margin: 0px 5px;
 
 
  }
 
  .prevArrow{
-    padding-right: 10px;
+    padding-right:6.25px;
 }
 .nextArrow{
-    padding-left:10px;
+    padding-left:6.25px;
 }
 
