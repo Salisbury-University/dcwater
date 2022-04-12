@@ -7,6 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
+
+a:link { text-decoration: none; }
+
+a:visited { text-decoration: none; }
+
+a:hover { text-decoration: none; }
+
+a:active { text-decoration: none; }
+
 img.checkmark {
 margin: auto;
 display: block;
@@ -89,9 +98,11 @@ Your form has been submitted.
 View Ticket Status
 </div>
 
+<a href="Begin.php">
 <div class = "button" style="background-color:#FFFFFF;color:#0075C9;border:2px solid #0075C9; margin-top:10px">
 Report Another Problem
 </div>
+</a>
 
 <div class="bottomNav" style="margin-top:120px">
 <button onclick="#" type="button"  class="prevButton"><span class="prevButtonText">Previous</span></button>
