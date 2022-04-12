@@ -48,6 +48,12 @@ float: right;
 /* Inside auto layout */
 
  }
+
+.nextButton:disabled{
+background: #DDDDDD;
+color: #4A4A4A;
+}
+
  .prevButtonText{
     position: static;
 
