@@ -158,12 +158,8 @@ Other
 </div>
 
 <div class="bottomNav" style="margin-top:250px">
-<button onclick="#" type="button"  class="prevButton">
-<span class="prevButtonText">Previous</span>
-</button>
-<button onclick="#" type="button" class="nextButton">
-<span class="nextButtonText">Next</span>
-</button>
+<button onclick="#" type="button"  class="prevButton"><span class="prevButtonText"><img class="prevArrow" src="Images/ArrowBlue.png">Back</span></button>
+<button onclick="#" type="button" class="nextButton"><span class="nextButtonText">Next<img class="nextArrow" src="Images/ArrowWhite.png"></span></button>
 </div>
 
 </body>
