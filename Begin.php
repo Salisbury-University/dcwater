@@ -26,23 +26,25 @@
 
 <img img src="Images/Icon.png"class="Water-Icon">
 
-<div class="frame52"></div>
+<div class="frame52">
+
+</div>
 
 <div class="DCWaterMonitors"> 
-DC Water monitors this system 24/7 for new customer reports.
+<span>DC Water monitors this system 24/7 for new customer reports.</span>
 </div>
 <!------------------------------ <span style="color:red">*</span> --->
 <!---THIS IS THE TEXT UNDER REPORT AN EMERGENCY ---> 
 
 <div class="Monitors-Paragraph">
-Welcome to the DC Water emergency reporting system. 
+<span>Welcome to the DC Water emergency reporting system. 
 If there is a risk to safety or damage to public or private property, please submit this form. 
 <br><br>
 For account, billing or other inquiries, please contact us via our 
 <a href="dcwater.com">customer service form.</a> 
 <br><br>
 You can also call us at <a href="dcwater.com">(202) 612-3400</a> or reach out on 
-<a href="dcwater.com">Twitter @dcwater.</a>
+<a href="dcwater.com">Twitter @dcwater.</a></span>
 </div>
 <!--- THE CONTENT DEPENDS ON THE PAGE. SOME PAGES DONT EVEN 
 HAVE THIS TEXT SO CHECK WITH THE PAGE> ---> 
@@ -53,7 +55,7 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
     some pages do not --->
 
 
-All fields marked with an asterisk (*) on the form are required.
+<span>All fields marked with an asterisk (*) on the form are required.</span>
 
 
 </div>

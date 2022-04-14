@@ -24,7 +24,8 @@ body {
   letter-spacing: 0em;
   text-align: left;
   display: flex;
-  padding-left: 16px;
+  padding-left: 17px;
+  margin-top:-5px;
    }
    div{
        white-space: normal;
@@ -58,10 +59,9 @@ body {
     border-radius: 10px;
       border: 2px solid #A9A9A9;
       padding: 20px; 
-      width: 290px;
+      width: 300px;
       height: 10px;
       margin-left: 16px;
-      margin-right:16px;
   }
 
   
@@ -184,38 +184,43 @@ background: #2E3A59
     margin-top: 80px;
 }
 
-.Arrow-Blue{
-  position: relative;
-  top: 10px;
-  margin-right:10px;
-  margin-left: 1px;
+.TrackReportParagraph {
+position: static;
+width: 343px;
+height: 229px;
+
+font-family: 'Fira Sans', sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 17px;
+line-height: 20px;
+margin-top:20px;
+margin-left:16px;
+margin-bottom: 209px;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 2;
+flex-grow: 0;
 }
 
-.Arrow-Black{
-  position: relative;
-  top: 10px;
-  margin-left:10px;
-  
-  z-index: 99999;
-}
-
-.searchIcon
+.WhiteArrow
 {
-position:absolute;
-left: 330px;
-right:  27.91px;
-top: 285px;
-bottom: 0px;
-
-/* Shade / 700 */
-
+  margin-bottom:-2px;
 }
 
-.Arrow-White
+.TrackEnd
 {
-  position: relative;
-  top: 10px;
-  margin-left:10px;
-  
-  z-index: 99999;
+  letter-spacing: 0.001in;
+  font-family: 'Fira Sans', sans-serif;
+  font-style: bold;
+  font-weight: 600;
+  font-size: 14px;
+  line-height: 150%;
+  color: white;
+
 }

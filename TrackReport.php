@@ -1,9 +1,9 @@
 <!DOCTYPE html> 
 <html>
 <head>
-	<link href="Location.css" rel="stylesheet" type="text/css">
+	<link href="TrackReport.css" rel="stylesheet" type="text/css">
     <link href="navbarFormat.css" rel="stylesheet" type="text/css">
-    <link href="footerformatLocation.css" rel="stylesheet" type="text/css" >
+    <link href="footerformatTrackRep.css" rel="stylesheet" type="text/css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -17,11 +17,11 @@
 </nav>
 <!--- END OF NAVBAR ---> 
 <div>
-<p id="ReportAnEmergency">Report a Problem</p>
+<p id="ReportAnEmergency">Track Your Report</p>
 </div>
 <!---THIS IS THE TEXT UNDER REPORT AN EMERGENCY ---> 
 <div>
-<p id = "step">Step 1 of 3</p>
+<p id = "step">Track Your Report</p>
 </div>
 <!--- THE CONTENT DEPENDS ON THE PAGE. SOME PAGES DONT EVEN 
 HAVE THIS TEXT SO CHECK WITH THE PAGE> ---> 
@@ -30,41 +30,34 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 <!--- This is the partial line under the notifications tab and above the content
     of the page. When editing this template, make sure the page has this because 
     some pages do not --->
-    <p>What is your location?<span style="color:red"> *</span></p>
+    <p>Enter your ticket number</p>
 </div>
 <div>
-<span><input type="text" id="ColorChange" class="InputLocation" placeholder="Enter Location..."
+<input type="text" id="ColorChange"class="InputLocation" placeholder="Enter ticket number here..."
 onkeyup="ChangeColor()"/>
-<img src="Images/searchIcon.png" class="searchIcon" width=10/></span>
-</div>  
-
-<div>
-<button onclick="#" type="button"  class="UseLocButton"><span class="LocButtonText">Use my location</span>
-<img src="Images/MapArrow.png"/></button>
-<button onclick="#" type="button"   class="DropPinButton"><span class="LocButtonText">Drop a Pin</span>
-<img src="Images/MapPin.png"/></button>
 
 </div>
 
-<div class="MapScreenshot">
-<img src="Images/MapScreenshot.png"/>
+<div class="TrackReportParagraph">
+If you provided your contact information in the Report a Problem form, 
+you should have received an email from DC Water with your ticket number.
+<br><br> 
+If you have difficulty finding your tracking number, you can call us at 
+(202) 612-3400 or reach out on Twitter @dcwater.
 </div>
-
 <div class="bottomNav">
-<button onclick="#" type="button"  class="prevButton"><span class="prevButtonText">
-<img img src="Images/ArrowBlue.png"class="Arrow-Blue"> 
-&nbsp &nbsp &nbsp Back</span></button>
-<button onclick="#" type="button" id="ForColor"class="nextButton"><span class="nextButtonText">
-&nbsp &nbsp &nbsp
-Next
-<img img src="Images/ArrowWhite.png"class="Arrow-White"></span></button>
-
+<button onclick="#" type="button" class="prevButton"><span class="prevButtonText">Report a Problem</span></button>
+<button onclick="#" type="button" id="ForColor" class="nextButton">
+<span id="ForColorText" class="TrackEnd">Track</span>
+<span> 
+<img src="Images/ArrowWhite.png" class="WhiteArrow">
+</span></button> 
 </div>
 </body>
 <script>
 
     document.getElementById("ForColor").style.background = "Gray";
-    function ChangeColor(){
+  function ChangeColor(){
       if (document.getElementById("ColorChange").value == "") {
          document.getElementById("ForColor").style.background = "Gray";
       } else {
