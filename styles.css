@@ -357,3 +357,87 @@ color: black;
 font-size: 16px;
 
 }
+
+.smallBold{ 
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 700;
+font-size: 16px;
+line-height: 19px;
+display: flex;
+align-items: center;
+
+/* Darker grey */
+
+color: #2D2D2D;
+
+
+/* Inside auto layout */
+
+
+
+
+
+
+
+
+ }
+
+ .trackText{
+  font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+/* identical to box height */
+
+display: flex;
+align-items: center;
+
+/* Darker grey */
+
+color: #2D2D2D;
+
+ }
+
+.nextSteps{
+position: static;
+width: 343px;
+height: 91px;
+left: 0px;
+top: 27px;
+
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 17px;
+
+color: #000000;
+
+
+/* Inside auto layout */
+
+
+ }
+
+.caseButton{
+
+  display: inline-block;
+  width: 150px;
+  height: 50px;
+  background-color: white;
+  font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-size: 16px;
+margin-right: 10px;
+text-align: center;
+border-bottom: 2px solid #BFBFBF;
+color: #BFBFBF;
+border-top: none;
+border-left: none;
+border-right: none;
+
+
+}
