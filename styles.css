@@ -438,6 +438,33 @@ color: #BFBFBF;
 border-top: none;
 border-left: none;
 border-right: none;
+outline: none;
 
 
 }
+.active, .caseButton:hover {
+ border-color: #0075C9;
+ color: #2D2D2D;
+}
+
+.anotherReport{
+
+margin-left: 74px;
+
+width: 227px;
+height: 52px;
+
+background: #FFFFFF;
+/* Blue/Blue DC Water */
+
+border: 2px solid #0075C9;
+border-radius: 6px;
+
+/* Inside auto layout */
+
+color: #0075C9;
+
+
+}
+
+

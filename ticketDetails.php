@@ -46,8 +46,8 @@
 
 <!--- SECTION WILL BE FINISHED WHEN THE DATABASE IS READY  --->
     <div class="field">
-    <div class="progBar" id = "activeBar"></div>
-    <div class="progLabel" id ="activeLabel" >Ticket Opened</div>
+    <div class="progBar activeBar" ></div>
+    <div class="progLabel activeLabel">Ticket Opened</div>
     </div>
 
     <div class="field">
@@ -80,20 +80,43 @@
     
 </div>
 
-<div style="margin-left: 16px; margin-top: 20px;">
-    <button onclick="#" type="button" class = "caseButton">Case History</button>
-    <button onclick="#" type="button" class = "caseButton">Ticket History</button>
-
-
-
-
-
+<div style="margin-left: 16px; margin-top: 20px;" id="buttonDiv">
+    <button id="caseHistoryAction" type="button" class ="caseButton active">Case History</button>
+    <button id="ticketHistoryAction" type="button" class = "caseButton">Ticket History</button>
 </div>
 
- 
+<div id="textData" style="margin-top: 25px;">  
+</div>
+
+<div style="margin-top:35px; margin-bottom: 40px;">
+    <button type="button" class="anotherReport">Report Another Problem</button> 
+</div>
 </body>
- 
-    
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
+    $(document).ready(function (){
+         $("#textData").load("caseHistory.php");
+        $("#caseHistoryAction").click(function (e) {
+            $("#textData").load("caseHistory.php");
+        }); 
+        $("#ticketHistoryAction").click(function (a) {
+            $("#textData").load("ticketHistory.php");
+        });
+
+    });
+var btnContainer = document.getElementById("buttonDiv");
+
+var btns = btnContainer.getElementsByClassName("caseButton");
+
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function() {
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+</script>
 
 </html>
 
