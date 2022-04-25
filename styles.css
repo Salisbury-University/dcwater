@@ -75,10 +75,6 @@ padding-left: 16px;
 .greyButton{
 
 
-left: 0%;
-right: 0%;
-top: 0%;
-bottom: 0%;
 
 /* Primary_Blue */
 
@@ -87,27 +83,52 @@ box-sizing: border-box;
 border-radius: 5px;
 margin-left: 16px;
 margin-right: 4px;
-width: 161px;
+width: 170px;
 height: 41px;
 background-color: white;
-}
-
-.greyButtonText{
-font-family: 'Avenir';
+font-family: 'Fira Sans',sans-serif;
 font-style: normal;
-font-weight: 900;
 font-size: 18px;
 line-height: 120%;
-/* identical to box height, or 22px */
+align-items: center;
+
 
 display: flex;
-align-items: center;
 
 /* Dark grey */
 
-color: #4A4A4A;
-
+color: black;
 }
+
+.greyButton2{
+
+
+
+/* Primary_Blue */
+
+border: 1.5px solid #3580C0;
+box-sizing: border-box;
+border-radius: 5px;
+margin-left: 16px;
+margin-right: 4px;
+width: 125px;
+height: 41px;
+background-color: white;
+font-family: 'Fira Sans',sans-serif;
+font-style: normal;
+font-size: 18px;
+line-height: 120%;
+align-items: center;
+
+
+display: flex;
+
+/* Dark grey */
+
+color: black;
+}
+
+
 
 .left{
     left: 33.54%;
@@ -467,4 +488,10 @@ color: #0075C9;
 
 }
 
+#cameraInput {
+  display: none;
+}
 
+#uploadButton{
+  display: none;
+}

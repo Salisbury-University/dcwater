@@ -5,7 +5,8 @@
     <link href="navbarFormat.css" rel="stylesheet" type="text/css">
     <link href="footerFormat.css" rel="stylesheet" type="text/css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ <script src="https://kit.fontawesome.com/0e44e217c6.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <!--- START OF NAVBAR---> 
@@ -38,10 +39,23 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 <div style="margin-top: 20px;" >
     <span class = "bold">Add A Photo</span>
 </div>
-
 <div style="margin-top: 20px;">
-<button onclick="#" type="button" class="greyButton"><span class="greyButtonText"><img src="Images/Camera.png" style="margin-right:10px;">Take A Photo</span></button>
-<button onclick="#" type="button" class="greyButton"><span class="greyButtonText"><img src="Images/upload.png" style="margin-right:10px;">Upload</span></button>
+<form action="upload.php" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: row;">
+ <label for="cameraInput">
+ <span class="greyButton"><img src="Images/Camera.png" style="margin-right:15px; margin-left:10px;">take a Photo</span>
+   <input 
+        id="cameraInput"
+        type="file"
+        accept="image/*"
+        capture="environment"
+      />
+</label>
+
+<label for="uploadButton">
+<span class="greyButton2"><img src="Images/upload.png" style="margin-right:15px; margin-left:10px;">Upload</span>
+<input type="submit" value="Upload Image" name="submit" id="uploadButton">    
+</label>
+</form>
 </div>
 
 <div style="margin-top:20px;">
@@ -58,7 +72,7 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 <div class="bottomNav">
 
 <button onclick="#" type="button"  class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
-<button onclick="#" type="button" class="nextButton"><span class="nextButtonText">Next <img src="Images/nextArrow.png" class="nextArrow"></span></button>
+<button onclick="#" type="button" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
 
 </div>
 
