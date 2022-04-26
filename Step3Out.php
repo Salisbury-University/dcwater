@@ -1,9 +1,10 @@
 <html>
 <head>
-	<link href="styles.css" rel="stylesheet" type="text/css">
+    <link href="styles.css" rel="stylesheet" type="text/css">
     <link href="navbarFormat.css" rel="stylesheet" type="text/css">
     <link href="footerFormat.css" rel="stylesheet" type="text/css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 
 p.rando{
@@ -38,7 +39,7 @@ color: #D90514;
 font-size: 18px;
 }
 
-.button{
+.bigbutton{
 font-family: 'Fira Sans', sans-serif;
 cursor: pointer;
 position: relative;
@@ -57,14 +58,59 @@ padding-right: 17px;
 padding-bottom: 10px;
 }
 
-.button:active{
+.bigbuttonblue{
+font-family: 'Fira Sans', sans-serif;
+cursor: pointer;
+position: relative;
+width: 238px;
+height: 70px;
 background-color: #8EBDE0;
+color: #00528C;
+border-style: solid;
+border-width: 2px;
+border-radius: 16px 16px 16px 16px;
+border-color: #0075C9;
+right: 76.68%;
+left: 10px;
+top: 10px;
+font-size: 18px;
+padding-left: 100px;
+padding-top: 10px;
+padding-right: 17px;
+padding-bottom: 10px;
+box-shadow: 0px 3px 5px #808080;
 }
+
 
 .halfbutton{
 cursor: pointer;
 position: relative;
 background-color: #8EBDE0;
+width: 80px;
+height: 90px;
+border-radius: 16px 0px 0px 16px;
+left: 10px;
+top: -80px;
+}
+
+.halfbuttonactive{
+cursor: pointer;
+position: relative;
+background-color: #8EBDE0;
+width: 80px;
+height: 90px;
+border-top: 2px solid #0075C9;
+border-left: 2px solid #0075C9;
+border-bottom: 2px solid #0075C9;
+border-radius: 16px 0px 0px 16px;
+left: 10px;
+top: -84px;
+}
+
+.halfbuttongray{
+cursor: pointer;
+position: relative;
+background-color: #EFEFEF;
 width: 80px;
 height: 90px;
 border-radius: 16px 0px 0px 16px;
@@ -79,12 +125,16 @@ left: 25%;
 }
 
 .rando{
+font-family: 'Fira Sans', sans-serif;
 font-size: 16px;
 color: #2D2D2D;
 }
 
 </style>
 </head>
+
+
+
 <body>
 <!--- START OF NAVBAR---> 
 <nav>
@@ -117,34 +167,113 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 
 <!--- PUT CONTENT HERE---> 
 
-<div class = "button">
+<div id = "Flood" class = "bigbutton" onclick="ChangeColor(); swapImg(); activateFlood();">
 Flooding / Leaking
 <p class = "rando">Report an excess of water or water flow issue</p>
 </div>
-<div class = "halfbutton">
+<div id = "HalfFlood" class = "halfbutton">
 <img class = "icon" src="Images/OutdoorFlood.png">
 </div>
 
-<div class = "button" style="margin-top:-75px">
+
+
+
+<div id = "Damage" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateDamage();">
 Damage
 <p class = "rando">Report defective, hazardous, or missing equipment</p>
 </div>
-<div class = "halfbutton">
+<div id = "HalfDamage" class = "halfbutton">
 <img class = "icon" src="Images/Damage.png">
 </div>
 
-<div class = "button" style="margin-top:-75px">
+
+
+
+<div id = "Other" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateOther();">
 Other / Not Sure
 <p class = "rando">Select this option if the above categories don't apply</p>
 </div>
-<div class = "halfbutton">
+<div id = "HalfOther" class = "halfbutton">
 <img class = "icon" src="Images/Other.png">
 </div>
 
 <div class="bottomNav" style="margin-top:250px">
-<button onclick="#" type="button"  class="prevButton"><span class="prevButtonText"><img class="prevArrow" src="Images/ArrowBlue.png">Back</span></button>
-<button onclick="#" type="button" class="nextButton"><span class="nextButtonText">Next<img class="nextArrow" src="Images/ArrowWhite.png"></span></button>
+<button onclick="window.location.href = 'Step2.php';" type="button"  class="prevButton"><span class="prevButtonText"><img class="prevArrow" src="Images/ArrowBlue.png">Back</span></button>
+<button onclick="#" type="button" id="ForColor" class="nextButton" disabled><span id="ForColor">Next<img class="nextArrow" id="ImgColor" src="Images/ArrowBlack.png"></span></button>
 </div>
 
 </body>
+
+<script type="text/javascript">
+
+document.getElementById("ForColor").style.background = "#DDDDDD";
+function ChangeColor(){
+if (document.getElementById("Flood").value == "" || document.getElementById("Damage").value == "" || document.getElementById("Other").value == ""){
+document.getElementById("ForColor").style.background = "#DDDDDD";
+} else {
+document.getElementById("ForColor").style.background = "#0075C9";
+document.getElementById("ForColor").style.color = "#FFFFFF";
+document.getElementById("ForColor").disabled = false;
+}
+}
+
+function swapImg(){
+if (document.getElementById("ImgColor").src.endsWith("ArrowBlack.png") == true){
+document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
+} else {
+document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
+}
+}
+
+function activateFlood(){
+document.getElementById("Flood").className = "bigbuttonblue";
+document.getElementById("HalfFlood").className = "halfbuttonactive";
+document.getElementById("HalfDamage").className = "halfbuttongray";
+document.getElementById("HalfOther").className = "halfbuttongray";
+if (document.getElementById("Damage").classList.contains ("bigbuttonblue")){
+document.getElementById("Damage").className = "bigbutton";
+}
+if (document.getElementById("Other").classList.contains ("bigbuttonblue")){
+document.getElementById("Other").className = "bigbutton";
+}
+document.getElementById("ForColor").onclick = function(){
+location.href = "AdditionalDetails.php";
+}
+}
+
+function activateDamage(){
+document.getElementById("Damage").className = "bigbuttonblue";
+document.getElementById("HalfDamage").className = "halfbuttonactive";
+document.getElementById("HalfFlood").className = "halfbuttongray";
+document.getElementById("HalfOther").className = "halfbuttongray";
+if (document.getElementById("Flood").classList.contains ("bigbuttonblue")){
+document.getElementById("Flood").className = "bigbutton";
+}
+if (document.getElementById("Other").classList.contains ("bigbuttonblue")){
+document.getElementById("Other").className = "bigbutton";
+}
+document.getElementById("ForColor").onclick = function(){
+location.href = "AdditionalDetails.php";
+}
+}
+
+function activateOther(){
+document.getElementById("Other").className = "bigbuttonblue";
+document.getElementById("HalfOther").className = "halfbuttonactive";
+document.getElementById("HalfDamage").className = "halfbuttongray";
+document.getElementById("HalfFlood").className = "halfbuttongray";
+if (document.getElementById("Flood").classList.contains ("bigbuttonblue")){
+document.getElementById("Flood").className = "bigbutton";
+}
+if (document.getElementById("Damage").classList.contains ("bigbuttonblue")){
+document.getElementById("Damage").className = "bigbutton";
+}
+document.getElementById("ForColor").onclick = function(){
+location.href = "unsure.php";
+}
+}
+
+
+</script>
+
 </html>
