@@ -86,7 +86,7 @@ color: #BFBFBF;
 <!--- PUT CONTENT HERE---> 
 
 <div class = "outline">
-<img style="margin-left:285px" src = "Images/CloseButton.png">
+<img onclick="window.location.href = 'Begin.php';" style="margin-left:285px" src = "Images/CloseButton.png">
 
 <div class = "bluetext" style="margin-top:20px">
 Your feedback is important to us!
@@ -104,7 +104,7 @@ What would you like to share with us?
 <textarea placeholder="Enter text here..."></textarea>
 </div>
 
-<div class = "submitbutton">
+<div onclick="window.location.href = 'FeedbackSub.php';" class = "submitbutton">
 Submit
 </div>
 
