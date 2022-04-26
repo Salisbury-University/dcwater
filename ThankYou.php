@@ -94,7 +94,7 @@ Your form has been submitted.
 <p class = "bolder">Please keep the following ticket number for your records: #</p>
 </div>
 
-<div class = "button" style="background-color:#0075C9;color:#FFFFFF">
+<div onclick="window.location.href = 'ticketDetails.php';" class = "button" style="background-color:#0075C9;color:#FFFFFF">
 View Ticket Status
 </div>
 
@@ -104,10 +104,6 @@ Report Another Problem
 </div>
 </a>
 
-<div class="bottomNav" style="margin-top:120px">
-<button onclick="#" type="button"  class="prevButton"><span class="prevButtonText">Previous</span></button>
-<button onclick="#" type="button" class="nextButton"><span class="nextButtonText">Next</span></button>
-</div>
 </div>
 </body>
 </html>
