@@ -56,7 +56,7 @@ color: #000000
 <!--- PUT CONTENT HERE---> 
 
 <div class = "outline">
-<img style="margin-left:285px" src = "Images/CloseButton.png">
+<img onclick="window.location.href = 'Begin.php';" style="margin-left:285px" src = "Images/CloseButton.png">
 
 <div class = "bluetext" style="margin-top:20px">
 Thank you for submitting your feedback!
