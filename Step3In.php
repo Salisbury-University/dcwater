@@ -38,7 +38,7 @@ color: #D90514;
 font-size: 18px;
 }
 
-.button{
+.bigbutton{
 font-family: 'Fira Sans', sans-serif;
 cursor: pointer;
 position: relative;
@@ -57,8 +57,27 @@ padding-right: 17px;
 padding-bottom: 10px;
 }
 
-.button:active{
+.bigbuttonblue{
+font-family: 'Fira Sans', sans-serif;
+cursor: pointer;
+position: relative;
+width: 238px;
+height: 70px;
 background-color: #8EBDE0;
+color: #00528C;
+border-style: solid;
+border-width: 2px;
+border-radius: 16px 16px 16px 16px;
+border-color: #0075C9;
+right: 76.68%;
+left: 10px;
+top: 10px;
+font-size: 18px;
+padding-left: 100px;
+padding-top: 10px;
+padding-right: 17px;
+padding-bottom: 10px;
+box-shadow: 0px 3px 5px #808080;
 }
 
 .halfbutton{
@@ -71,6 +90,32 @@ border-radius: 16px 0px 0px 16px;
 left: 10px;
 top: -80px;
 }
+
+.halfbuttonactive{
+cursor: pointer;
+position: relative;
+background-color: #8EBDE0;
+width: 80px;
+height: 90px;
+border-top: 2px solid #0075C9;
+border-left: 2px solid #0075C9;
+border-bottom: 2px solid #0075C9;
+border-radius: 16px 0px 0px 16px;
+left: 10px;
+top: -84px;
+}
+
+.halfbuttongray{
+cursor: pointer;
+position: relative;
+background-color: #EFEFEF;
+width: 80px;
+height: 90px;
+border-radius: 16px 0px 0px 16px;
+left: 10px;
+top: -80px;
+}
+
 
 .icon{
 position: relative;
@@ -85,6 +130,10 @@ color: #2D2D2D;
 
 </style>
 </head>
+
+
+
+
 <body>
 <!--- START OF NAVBAR---> 
 <nav>
@@ -117,50 +166,205 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 
 <!--- PUT CONTENT HERE--->
 
-<div class = "button">
+<div id = "Flood" class = "bigbutton" onclick="ChangeColor(); swapImg(); activateFlood();">
 Flooding / Leaking
 <p class = "rando">Report an excess of water or water flow issue</p>
 </div>
-<div class = "halfbutton">
+<div id = "HalfFlood" class = "halfbutton">
 <img class = "icon" src="Images/IndoorFlood.png">
 </div>
 
-<div class = "button" style="margin-top:-75px">
+
+
+<div id = "Pressure" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activatePressure();">
 Water Pressure
 <p class = "rando">Report a low water pressure issue</p>
 </div>
-<div class = "halfbutton">
+<div id = "HalfPressure" class = "halfbutton">
 <img class = "icon" src="Images/Pressure.png">
 </div>
 
-<div class = "button" style="margin-top:-75px">
+
+
+<div id = "NoWater" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateNoWater();">
 No Water
 <p class = "rando">Report a water outage or access issue</p>
 </div>
-<div class = "halfbutton">
+<div id = "HalfNoWater" class = "halfbutton">
 <img class = "icon" src="Images/NoWater.png">
 </div>
 
-<div class = "button" style="margin-top:-75px">
+
+
+<div id = "Quality" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateQuality();">
 Water Quality
 <p class = "rando">Report discolored, polluted, or cloudy water</p>
 </div>
-<div class = "halfbutton">
+<div id = "HalfQuality" class = "halfbutton">
 <img class = "icon" src="Images/PoorQuality.png">
 </div>
 
-<div class = "button" style="margin-top:-75px">
+
+
+<div id = "Other" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateOther();">
 Other
 <p class = "rando">Select this option if the above categories don't apply</p>
 </div>
-<div class = "halfbutton">
+<div id = "HalfOther" class = "halfbutton">
 <img class = "icon" src="Images/Other.png">
 </div>
 
+
+
 <div class="bottomNav" style="margin-top:250px">
-<button onclick="#" type="button"  class="prevButton"><span class="prevButtonText"><img class="prevArrow" src="Images/ArrowBlue.png">Back</span></button>
-<button onclick="#" type="button" class="nextButton"><span class="nextButtonText">Next<img class="nextArrow" src="Images/ArrowWhite.png"></span></button>
+<button onclick="window.location.href = 'Step2.php';" type="button"  class="prevButton"><span class="prevButtonText"><img class="prevArrow" src="Images/ArrowBlue.png">Back</span></button>
+<button onclick="#" type="button" id="ForColor" class="nextButton" disabled><span id="ForColor">Next<img class="nextArrow" id="ImgColor" src="Images/ArrowBlack.png"></span></button>
 </div>
 
 </body>
+
+<script type="text/javascript">
+
+document.getElementById("ForColor").style.background = "#DDDDDD";
+function ChangeColor(){
+if (document.getElementById("Flood").value == "" || document.getElementById("Pressure").value == "" || document.getElementById("NoWater").value == "" || document.getElementById("Quality").value == "" || document.getElementById("Other").value == ""){
+document.getElementById("ForColor").style.background = "#DDDDDD";
+} else {
+document.getElementById("ForColor").style.background = "#0075C9";
+document.getElementById("ForColor").style.color = "#FFFFFF";
+document.getElementById("ForColor").disabled = false;
+}
+}
+
+function swapImg(){
+if (document.getElementById("ImgColor").src.endsWith("ArrowBlack.png") == true){
+document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
+} else {
+document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
+}
+}
+
+function activateFlood(){
+document.getElementById("Flood").className = "bigbuttonblue";
+document.getElementById("HalfFlood").className = "halfbuttonactive";
+document.getElementById("HalfPressure").className = "halfbuttongray";
+document.getElementById("HalfNoWater").className = "halfbuttongray";
+document.getElementById("HalfQuality").className = "halfbuttongray";
+document.getElementById("HalfOther").className = "halfbuttongray";
+if (document.getElementById("Pressure").classList.contains ("bigbuttonblue")){
+document.getElementById("Pressure").className = "bigbutton";
+}
+if (document.getElementById("NoWater").classList.contains ("bigbuttonblue")){
+document.getElementById("NoWater").className = "bigbutton";
+}
+if (document.getElementById("Quality").classList.contains ("bigbuttonblue")){
+document.getElementById("Quality").className = "bigbutton";
+}
+if (document.getElementById("Other").classList.contains ("bigbuttonblue")){
+document.getElementById("Other").className = "bigbutton";
+}
+document.getElementById("ForColor").onclick = function(){
+location.href = "AdditionalDetails.php";
+}
+}
+
+function activatePressure(){
+document.getElementById("Pressure").className = "bigbuttonblue";
+document.getElementById("HalfPressure").className = "halfbuttonactive";
+document.getElementById("HalfFlood").className = "halfbuttongray";
+document.getElementById("HalfNoWater").className = "halfbuttongray";
+document.getElementById("HalfQuality").className = "halfbuttongray";
+document.getElementById("HalfOther").className = "halfbuttongray";
+if (document.getElementById("Flood").classList.contains ("bigbuttonblue")){
+document.getElementById("Flood").className = "bigbutton";
+}
+if (document.getElementById("NoWater").classList.contains ("bigbuttonblue")){
+document.getElementById("NoWater").className = "bigbutton";
+}
+if (document.getElementById("Quality").classList.contains ("bigbuttonblue")){
+document.getElementById("Quality").className = "bigbutton";
+}
+if (document.getElementById("Other").classList.contains ("bigbuttonblue")){
+document.getElementById("Other").className = "bigbutton";
+}
+document.getElementById("ForColor").onclick = function(){
+location.href = "AdditionalDetails.php";
+}
+}
+
+function activateNoWater(){
+document.getElementById("NoWater").className = "bigbuttonblue";
+document.getElementById("HalfNoWater").className = "halfbuttonactive";
+document.getElementById("HalfPressure").className = "halfbuttongray";
+document.getElementById("HalfFlood").className = "halfbuttongray";
+document.getElementById("HalfQuality").className = "halfbuttongray";
+document.getElementById("HalfOther").className = "halfbuttongray";
+if (document.getElementById("Pressure").classList.contains ("bigbuttonblue")){
+document.getElementById("Pressure").className = "bigbutton";
+}
+if (document.getElementById("Flood").classList.contains ("bigbuttonblue")){
+document.getElementById("Flood").className = "bigbutton";
+}
+if (document.getElementById("Quality").classList.contains ("bigbuttonblue")){
+document.getElementById("Quality").className = "bigbutton";
+}
+if (document.getElementById("Other").classList.contains ("bigbuttonblue")){
+document.getElementById("Other").className = "bigbutton";
+}
+document.getElementById("ForColor").onclick = function(){
+location.href = "AdditionalDetails.php";
+}
+}
+
+function activateQuality(){
+document.getElementById("Quality").className = "bigbuttonblue";
+document.getElementById("HalfQuality").className = "halfbuttonactive";
+document.getElementById("HalfPressure").className = "halfbuttongray";
+document.getElementById("HalfNoWater").className = "halfbuttongray";
+document.getElementById("HalfFlood").className = "halfbuttongray";
+document.getElementById("HalfOther").className = "halfbuttongray";
+if (document.getElementById("Pressure").classList.contains ("bigbuttonblue")){
+document.getElementById("Pressure").className = "bigbutton";
+}
+if (document.getElementById("NoWater").classList.contains ("bigbuttonblue")){
+document.getElementById("NoWater").className = "bigbutton";
+}
+if (document.getElementById("Flood").classList.contains ("bigbuttonblue")){
+document.getElementById("Flood").className = "bigbutton";
+}
+if (document.getElementById("Other").classList.contains ("bigbuttonblue")){
+document.getElementById("Other").className = "bigbutton";
+}
+document.getElementById("ForColor").onclick = function(){
+location.href = "AdditionalDetails.php";
+}
+}
+
+function activateOther(){
+document.getElementById("Other").className = "bigbuttonblue";
+document.getElementById("HalfOther").className = "halfbuttonactive";
+document.getElementById("HalfPressure").className = "halfbuttongray";
+document.getElementById("HalfNoWater").className = "halfbuttongray";
+document.getElementById("HalfQuality").className = "halfbuttongray";
+document.getElementById("HalfFlood").className = "halfbuttongray";
+if (document.getElementById("Pressure").classList.contains ("bigbuttonblue")){
+document.getElementById("Pressure").className = "bigbutton";
+}
+if (document.getElementById("NoWater").classList.contains ("bigbuttonblue")){
+document.getElementById("NoWater").className = "bigbutton";
+}
+if (document.getElementById("Quality").classList.contains ("bigbuttonblue")){
+document.getElementById("Quality").className = "bigbutton";
+}
+if (document.getElementById("Flood").classList.contains ("bigbuttonblue")){
+document.getElementById("Flood").className = "bigbutton";
+}
+document.getElementById("ForColor").onclick = function(){
+location.href = "unsure.php";
+}
+}
+
+
+</script>
+
 </html>
