@@ -1,3 +1,13 @@
+<?php
+session_start();
+$s = $_SESSION['User'];
+if (isset($s))
+{
+//do nothing
+} else {
+header("location:http://localhost/COSC425/Begin.php");
+}
+?>
 <!DOCTYPE html> 
 <html>
 <head>
@@ -47,17 +57,22 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 <div class="Box1" >
 <img src="Images/LeftSideBox.png"class="LeftSideBox1">
 <img src="Images/Pencil.png"class="Pencil1">
-<span class="Edit1"> Edit </span>
+<span onclick="window.location='Location.php'" class="Edit1"> Edit </span>
 </div>
 
 <div class="Location">
 Location:
 </div>
 
-<div class="FirstTextBox">
-1601 U St NW
-<br>
-Washington, DC 20009
+<div id= "FirstTextBox" class="FirstTextBox" readonly>
+<?php
+if (isset($_SESSION['location']))
+{
+echo $_SESSION['location'];   
+} else {
+header("location:http://localhost/COSC425/Begin.php");
+}
+?><br>  
 </div>
 
 <div>
@@ -67,18 +82,22 @@ Washington, DC 20009
 <div class="Box2">
 <img src="Images/LeftSideBox.png"class="LeftSideBox2">
 <img src="Images/Pencil.png"class="Pencil2">
-<span class="Edit2"> Edit </span>
+<span onclick="window.location='###'"class="Edit2"> Edit </span>
 </div>
 
 <div class="Issue">
 <span>Issue:</span>
 </div>
+
 <div class="SecondBoxText">
-<span>
-Outdoor
-<br>
-Flooding/Leaking
-</span>
+<?php
+if (isset($_SESSION['problemType']))
+{
+echo $_SESSION['problemType'];   
+} else {
+//header("location:http://localhost/COSC425/Begin.php");
+}
+?>
 </div>
 
 
@@ -86,16 +105,21 @@ Flooding/Leaking
 <div class="Box3">
 <img src="Images/LeftSideBox.png"class="LeftSideBox3">
 <img src="Images/Pencil.png"class="Pencil3">
-<span class="Edit3"> Edit </span>
+<span onclick="window.location='###'" class="Edit3"> Edit </span>
 </div>
 
 <div class="PhotosAndVideos">
 <span>Photos & Videos:</span>
 </div>
 <div class="ThirdBoxText">
-<span>
-None
-</span>
+<?php
+if (isset($_SESSION['photos']))
+{
+echo $_SESSION['photos'];   
+} else {
+//header("location:http://localhost/COSC425/Begin.php");
+}
+?>
 </div>
 
 
@@ -106,14 +130,14 @@ None
 
 <div class="bottomNav">
 
-<button onclick="#" type="button"  class="prevButton">
+<button onclick="window.location='contactInformation.php'" type="button"  class="prevButton">
 <span> 
 <img src="Images/ArrowBlue.png" class="BlueArrow">
 </span>
 <span class="Back"> Back
 </span>
 </button>
-<button onclick="#" type="button" class="nextButton">
+<button onclick="window.location='ThankYou.php'" type="button" class="nextButton">
 <span class="Next">Next</span>
 <span> 
 <img src="Images/ArrowWhite.png" class="WhiteArrow">

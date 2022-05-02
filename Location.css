@@ -216,6 +216,6 @@ bottom: 0px;
   position: relative;
   top: 10px;
   margin-left:10px;
-  
-  z-index: 99999;
+  ;
+  z-index: 999999;
 }

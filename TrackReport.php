@@ -1,3 +1,14 @@
+<?php
+session_start();
+$s = $_SESSION['User'];
+if (isset($s))
+{
+//do nothing
+} else {
+header("location:http://localhost/COSC425/Begin.php");
+}
+?>
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -33,9 +44,16 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
     <p>Enter your ticket number</p>
 </div>
 <div>
-<input type="text" id="ColorChange"class="InputLocation" placeholder="Enter ticket number here..."
-onkeyup="ChangeColor()"/>
-
+<form method="post">
+<input type="text" name="TicketNumber" id="ColorChange"class="InputLocation" placeholder="Enter ticket number here..."
+onkeyup="ChangeColor(); changeImage()"/>
+</form>
+<?php
+if(isset($_POST['TicketNumber']))
+{
+$_SESSION['ticketNumber']=$_POST['TicketNumber'];
+}
+?>
 </div>
 
 <div class="TrackReportParagraph">
@@ -43,26 +61,43 @@ If you provided your contact information in the Report a Problem form,
 you should have received an email from DC Water with your ticket number.
 <br><br> 
 If you have difficulty finding your tracking number, you can call us at 
-(202) 612-3400 or reach out on Twitter @dcwater.
+<a href="https://www.dcwater.com/">(202) 612-3400</a> or reach out on <a href="https://twitter.com/dcwater?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter @dcwater.</a>
 </div>
 <div class="bottomNav">
-<button onclick="#" type="button" class="prevButton"><span class="prevButtonText">Report a Problem</span></button>
-<button onclick="#" type="button" id="ForColor" class="nextButton">
+<button onclick="window.location='Begin.php'" type="button" class="prevButton"><span class="prevButtonText">Report a Problem</span></button>
+<button onclick="window.location='ticketDetails.php'" type="button" id="ForColor" class="nextButton">
 <span id="ForColorText" class="TrackEnd">Track</span>
 <span> 
-<img src="Images/ArrowWhite.png" class="WhiteArrow">
+<img name="arrowBlack" id="arrowBlack"src="Images/ArrowBlack.png" class="WhiteArrow">
 </span></button> 
 </div>
 </body>
 <script>
-
-    document.getElementById("ForColor").style.background = "Gray";
-  function ChangeColor(){
+    document.getElementById("ForColorText").style.color = "Black";
+    document.getElementById("ForColor").style.background = "#DDDDDD";
+    function ChangeColor(){
       if (document.getElementById("ColorChange").value == "") {
-         document.getElementById("ForColor").style.background = "Gray";
+         document.getElementById("ForColor").style.background = "#DDDDDD";
       } else {
          document.getElementById("ForColor").style.background = "#0075C9";
       }
+      if (document.getElementById("ColorChange").value == "") {
+         document.getElementById("ForColorText").style.color = "Black";
+      } else {
+         document.getElementById("ForColorText").style.color = "White";
+      }
     }
 </script>
+<script>
+        function changeImage() {
+            var Image_Id = document.getElementById('arrowBlack');
+            if (Image_Id.src.match("Images/ArrowBlack.png")) {
+                Image_Id.src = "Images/ArrowWhite.png";
+            }
+            if (document.getElementById('ColorChange').value== "")
+            {
+              Image_Id.src = "Images/ArrowBlack.png";
+            }
+        }    
+    </script>
 </html>

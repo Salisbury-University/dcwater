@@ -1,3 +1,8 @@
+<?php
+session_start();
+$_SESSION['User'] = "active";
+?>
+
 <!DOCTYPE html> 
 <html>
 <head>
@@ -5,6 +10,8 @@
     <link href="navbarFormat.css" rel="stylesheet" type="text/css">
     <link href="footerFormatBegin.css" rel="stylesheet" type="text/css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
 
 </head>
 <body>
@@ -43,8 +50,8 @@ If there is a risk to safety or damage to public or private property, please sub
 For account, billing or other inquiries, please contact us via our 
 <a href="dcwater.com">customer service form.</a> 
 <br><br>
-You can also call us at <a href="dcwater.com">(202) 612-3400</a> or reach out on 
-<a href="dcwater.com">Twitter @dcwater.</a></span>
+You can also call us at <a href="https://www.dcwater.com/">(202) 612-3400</a> or reach out on 
+<a href="https://twitter.com/dcwater?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">Twitter @dcwater.</a></span>
 </div>
 <!--- THE CONTENT DEPENDS ON THE PAGE. SOME PAGES DONT EVEN 
 HAVE THIS TEXT SO CHECK WITH THE PAGE> ---> 
@@ -62,8 +69,8 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 <br><br>
 <div class="bottomNav">
 
-<button onclick="#" type="button"  class="prevButton"><span class="prevButtonText">Track Status</span></button>
-<button onclick="#" type="button" class="nextButton"><span class="nextButtonText">Start Report
+<button onclick="window.location='TrackReport.php'" type="button"  class="prevButton"><span class="prevButtonText">Track Status</span></button>
+<button onclick="window.location='Location.php'" type="button" class="nextButton"><span class="nextButtonText">Start Report
 <img img src="Images/ArrowWhite.png"class="Arrow-White">    
 </span></button>
 

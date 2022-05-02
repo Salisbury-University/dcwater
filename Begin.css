@@ -79,6 +79,7 @@ body {
   
   }
   
+
   .frame52 {
    
     /* Frame 52 */
@@ -93,14 +94,14 @@ body {
   padding: 22px 14px 16px 32px;
   
   position: absolute;
-  width: 285px;
+  width: 78%;
   height: 40px;
   left: 0px;
   right:0px;
   top: 120.12px;
   margin-top: 39.12px;
   margin-left: 16px;
-  margin-right: 16px;
+  
   
   
   /* Blue/40 */
@@ -109,6 +110,7 @@ body {
   border-radius: 10px;
   z-index: -2;
   }
+
   
   .Monitors-Paragraph {
   
@@ -116,7 +118,7 @@ body {
   
   
   position: static;
-  width: 343px;
+  width: 90%;
   height: 229px;
   
   font-family: 'Fira Sans', sans-serif;
@@ -153,7 +155,7 @@ body {
   
   
   position: static;
-  width: 340px;
+  width: 90%;
   height: 66px;
   left: 16px;
   top: 447.12px;
