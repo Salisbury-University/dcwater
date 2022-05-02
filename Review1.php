@@ -5,7 +5,7 @@ if (isset($s))
 {
 //do nothing
 } else {
-header("location:http://localhost/COSC425/Begin.php");
+header("location:Begin.php");
 }
 ?>
 <!DOCTYPE html> 
@@ -70,7 +70,7 @@ if (isset($_SESSION['location']))
 {
 echo $_SESSION['location'];   
 } else {
-header("location:http://localhost/COSC425/Begin.php");
+header("location:Begin.php");
 }
 ?><br>  
 </div>
