@@ -1,3 +1,13 @@
+<?php
+session_start();
+$s = $_SESSION['User'];
+if (isset($s))
+{
+//do nothing
+} else {
+header("location:Begin.php");
+}
+?>
 <!DOCTYPE html> 
 <html>
 <head>
