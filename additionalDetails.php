@@ -73,7 +73,6 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript"> 
 let problemType = sessionStorage.getItem('problemType');
-problemType="Damage"; 
 if (problemType.toString()=="Damage") {
     $(".container").load("damages.php");
 }
@@ -124,13 +123,14 @@ function writeText(){
 </div>
 </body>
 <script type="text/javascript">
-let inOrout = sessionStorage.getItem('problem'); 
-if(inOrout.toString()=="Indoor"){
-    document.getElementById("prevButton").attribute("onclick","location.href='Step3In.php");
-}
-if(inOrout.toString()=="Outdoor"){
+let inOrout = sessionStorage.getItem('problemType'); 
+if(inOrout.toString()=="Damages"|| inOrout.toString()=="OutFlood" ){
     document.getElementById("prevButton").attribute("onclick","location.href='Step3Out.php");
+   
+}else{
+     document.getElementById("prevButton").attribute("onclick","location.href='Step3In.php");
 }
+
 </script>
 </html>
 
