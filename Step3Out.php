@@ -197,6 +197,7 @@ Other / Not Sure
 <img class = "icon" src="Images/Other.png">
 </div>
 
+
 <div class="bottomNav" style="margin-top:250px">
 <button onclick="window.location.href = 'Step2.php';" type="button"  class="prevButton"><span class="prevButtonText"><img class="prevArrow" src="Images/ArrowBlue.png">Back</span></button>
 <button onclick="#" type="button" id="ForColor" class="nextButton" disabled><span id="ForColor">Next<img class="nextArrow" id="ImgColor" src="Images/ArrowBlack.png"></span></button>
@@ -239,6 +240,7 @@ document.getElementById("Other").className = "bigbutton";
 document.getElementById("ForColor").onclick = function(){
 location.href = "AdditionalDetails.php";
 }
+sessionStorage.setItem('problemType', 'OutFlood');
 }
 
 function activateDamage(){
@@ -255,6 +257,7 @@ document.getElementById("Other").className = "bigbutton";
 document.getElementById("ForColor").onclick = function(){
 location.href = "AdditionalDetails.php";
 }
+sessionStorage.setItem('problemType', 'Damage');
 }
 
 function activateOther(){
@@ -271,6 +274,7 @@ document.getElementById("Damage").className = "bigbutton";
 document.getElementById("ForColor").onclick = function(){
 location.href = "unsure.php";
 }
+sessionStorage.setItem('problemType', 'Other');
 }
 
 
