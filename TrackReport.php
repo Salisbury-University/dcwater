@@ -1,13 +1,4 @@
-<?php
-session_start();
-$s = $_SESSION['User'];
-if (isset($s))
-{
-//do nothing
-} else {
-header("location:http://localhost/COSC425/Begin.php");
-}
-?>
+
 
 <!DOCTYPE html> 
 <html>
