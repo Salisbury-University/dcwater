@@ -1,3 +1,8 @@
+<?php
+
+session_start(); 
+
+?>
 <!DOCTYPE html> 
 <html>
 <head>
@@ -5,6 +10,7 @@
     <link href="navbarFormat.css" rel="stylesheet" type="text/css">
     <link href="footerFormat.css" rel="stylesheet" type="text/css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 
 </head>
 <body>
@@ -28,13 +34,7 @@
 <p id = "step">Notifications (Optional)</p>
 </div>
 
-<!--- THE CONTENT DEPENDS ON THE PAGE. SOME PAGES DONT EVEN 
-HAVE THIS TEXT SO CHECK WITH THE PAGE> ---> 
 
-
-<!--- This is the partial line under the notifications tab and above the content
-    of the page. When editing this template, make sure the page has this because 
-    some pages do not --->
 <hr align="left">
 
 <div style="margin-top: 20px;" >
@@ -52,11 +52,38 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 <div style="margin-top:22.5px; margin-left: 16px;">
    <form>
   <div class="checkboxes">
-    <label><input type="checkbox"> <span>Phone Call</span></label>
-    <label><input type="checkbox"> <span>Email</span></label>
+    <label><input type="checkbox" id="checkboxPhoneOne"> <span>Phone Call</span></label>
+    <label><input type="checkbox" id="checkboxPhoneTwo"> <span>Email</span></label>
   </div>
 </form>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var moreInfo = " "; 
+     $('#checkboxPhoneOne').change(function () {
+            if (this.checked){
+                moreInfo +=" Phone "
+                sessionStorage.setItem('moreInfo',moreInfo);
+                
+            }else{
+                moreInfo = moreInfo.replaceAll('Phone', '');
+                sessionStorage.setItem('moreInfo',moreInfo);
+
+            }
+        });
+      $('#checkboxEmailOne').change(function () {
+            if (this.checked){
+                moreInfo +=" Email "
+                sessionStorage.setItem('moreInfo',moreInfo);
+                
+            }else{
+                moreInfo = contactQuestion.replaceAll('Email', '');
+                sessionStorage.setItem('moreInfo',moreInfo);
+
+            }
+        });
+  });
+    </script>
 
 <hr align="left" style="color:#E8E8E8; background-color: #E8E8E8; margin-top: 20px;">
 
@@ -67,38 +94,86 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 <div style="margin-top:22.5px; margin-left: 16px;">
    <form>
   <div class="checkboxes">
-    <label><input type="checkbox"> <span>Phone Call</span></label>
-    <label><input type="checkbox"> <span>Email</span></label>
+    <label><input type="checkbox"id="checkboxPhoneTwo" > <span>Phone Call</span></label>
+    <label><input type="checkbox"id="checkBoxEmailTwo"> <span>Email</span></label>
   </div>
 </form>
 </div>
+<script type="text/javascript">
+    $(document).ready(function () {
+        var contactQuestion = " "; 
+     $('#checkboxPhoneTwo').change(function () {
+            if (this.checked){
+                contactQuestion +=" Phone "
+                sessionStorage.setItem('contactQuestion',contactQuestion);
+                
+            }else{
+                contactQuestion = contactQuestion.replaceAll('Phone', '');
+                sessionStorage.setItem('contactQuestion',contactQuestion);
+
+            }
+        });
+      $('#checkboxEmailTwo').change(function () {
+            if (this.checked){
+                contactQuestion +=" Email "
+                sessionStorage.setItem('contactQuestion',contactQuestion);
+                
+            }else{
+                contactQuestion = contactQuestion.replaceAll('Email', '');
+                sessionStorage.setItem('contactQuestion',contactQuestion);
+
+            }
+        });
+  });
+    </script>
 
 <div style="margin-top:20px; margin-left: 16px;">
+    <form name="nameText" method="post">
 <label for="fname" class="boxLabel">Full Name</label>
-<input type="text" id="fname" name="fname" class="tBox" placeholder="Enter Your Full Name Here...">   
-
+<input type="text" id="fname" onchange="writeName()" name="fname" class="tBox" placeholder="Enter Your Full Name Here...">   
+</form>
 
 </div>
 <div style="margin-top:20px; margin-left: 16px;">
+  <form name="emailText" method="post">   
 <label for="fname" class="boxLabel">Email</label>
-<input type="text" id="fname" name="fname" class="tBox"  placeholder="Enter Your Email Address Here...">   
-
+<input type="text" id="email" name="email" class="tBox" onchange="writeEmail()"  placeholder="Enter Your Email Address Here...">   
+</form>
 
 </div>
 
 <div style="margin-top:20px; margin-left: 16px; margin-bottom: 100px;">
+ <form name="phoneText" method="post"> 
 <label for="fname" class="boxLabel">Phone Number</label>
-<input type="text" id="fname" name="fname" class="tBox" placeholder="Enter Your Phone Number Here...">   
-
+<input type="text" id="phoneNum" name="phoneNum" class="tBox" onchange="writePhone()" placeholder="Enter Your Phone Number Here...">   
+</form>
 </div>
+<script type="text/javascript">
+   function writeName(){
+    var fname = document.forms["nameText"]["fname"].value;
+    sessionStorage.setItem('firstName',fname);
+    alert(fname);
+}
+ function writeEmail(){
+    var email= document.forms["emailText"]["email"].value;
+    sessionStorage.setItem('email',email);
+    alert(email);
+}
+ function writePhone(){
+    var phoneNumber= document.forms["phoneText"]["phoneNum"].value;
+    sessionStorage.setItem('phone',phoneNumber);
+    alert(phoneNumber);
+}
+
+</script>
 
 
 <!--- PUT CONTENT HERE---> 
 
 <div class="bottomNav">
 
-<button onclick="#" type="button" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
-<button onclick="#" type="button" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
+<button onclick="location.href='additionalDetails.php'" type="button" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
+<button onclick="location.href='Review1.php'" type="button" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
 
 </div>
 
