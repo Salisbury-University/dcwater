@@ -266,6 +266,7 @@ document.getElementById("Other").className = "bigbutton";
 document.getElementById("ForColor").onclick = function(){
 location.href = "AdditionalDetails.php";
 }
+sessionStorage.setItem('problemType', 'InFlood');
 }
 
 function activatePressure(){
@@ -290,6 +291,7 @@ document.getElementById("Other").className = "bigbutton";
 document.getElementById("ForColor").onclick = function(){
 location.href = "AdditionalDetails.php";
 }
+sessionStorage.setItem('problemType', 'Pressure');
 }
 
 function activateNoWater(){
@@ -314,6 +316,7 @@ document.getElementById("Other").className = "bigbutton";
 document.getElementById("ForColor").onclick = function(){
 location.href = "AdditionalDetails.php";
 }
+sessionStorage.setItem('problemType', 'NoWater');
 }
 
 function activateQuality(){
@@ -338,6 +341,7 @@ document.getElementById("Other").className = "bigbutton";
 document.getElementById("ForColor").onclick = function(){
 location.href = "AdditionalDetails.php";
 }
+sessionStorage.setItem('problemType', 'Quality');
 }
 
 function activateOther(){
@@ -362,6 +366,7 @@ document.getElementById("Flood").className = "bigbutton";
 document.getElementById("ForColor").onclick = function(){
 location.href = "unsure.php";
 }
+sessionStorage.setItem('problemType', 'Other');
 }
 
 
