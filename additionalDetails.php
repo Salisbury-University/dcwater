@@ -130,10 +130,10 @@ function writeText(){
 <script type="text/javascript">
 let inOrout = sessionStorage.getItem('problemType'); 
 if(inOrout.toString()=="Damages"|| inOrout.toString()=="OutFlood" ){
-    document.getElementById("prevButton").attribute("onclick","location.href='Step3Out.php");
+    document.getElementById("prevButton").attribute("onclick","location.href='Step3Out.php'");
    
 }else{
-     document.getElementById("prevButton").attribute("onclick","location.href='Step3In.php");
+     document.getElementById("prevButton").attribute("onclick","location.href='Step3In.php'");
 }
 
 </script>
