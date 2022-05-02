@@ -51,13 +51,13 @@ margin-left: 16px;
 font-weight: 700;
 }
 
-.button{
+.bigbutton{
 font-family: 'Fira Sans', sans-serif;
 cursor: pointer;
 width: 201px;
 height: 17px;
 border-radius: 6px;
-padding: 18px 16px 24px 12px;
+padding: 23px 16px 24px 12px;
 font-weight: 500;
 font-size: 16px;
 align-items: center;
@@ -65,6 +65,11 @@ text-align: center;
 margin-left: 74px;
 margin-right: 74px;
 margin-top: 30px;
+}
+
+.shareText{
+position: relative;
+top: -5px;
 }
 
 </style>
@@ -94,16 +99,40 @@ Your form has been submitted.
 <p class = "bolder">Please keep the following ticket number for your records: #</p>
 </div>
 
-<div onclick="window.location.href = 'ticketDetails.php';" class = "button" style="background-color:#0075C9;color:#FFFFFF">
+<div onclick="window.location.href = 'ticketDetails.php';" class = "bigbutton" style="background-color:#0075C9;color:#FFFFFF">
 View Ticket Status
 </div>
 
 <a href="Begin.php">
-<div class = "button" style="background-color:#FFFFFF;color:#0075C9;border:2px solid #0075C9; margin-top:10px">
+<div class = "bigbutton" style="background-color:#FFFFFF;color:#0075C9;border:2px solid #0075C9;margin-top:10px">
 Report Another Problem
 </div>
 </a>
 
+
+<div class = "bigbutton" style="background-color:#FFFFFF;color:#0075C9;border:2px solid #0075C9; margin-top:10px">
+<img src="Images/Share.png"><span class = "shareText">  Share</span>
+</div>
+
 </div>
 </body>
+
+<script type="text/javascript">
+
+const shareData = {
+title: 'DC Water',
+text: 'Ticket number',
+url: ''
+}
+
+const btn = document.querySelector('button');
+
+btn.addEventListener('click', async () => {
+try{
+await navigator.share(shareData)
+} catch(err){
+}
+});
+
+</script>
 </html>
