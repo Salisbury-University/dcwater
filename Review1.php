@@ -65,14 +65,7 @@ Location:
 </div>
 
 <div id= "FirstTextBox" class="FirstTextBox" readonly>
-<?php
-if (isset($_SESSION['location']))
-{
-echo $_SESSION['location'];   
-} else {
-header("location:Begin.php");
-}
-?><br>  
+<br>  
 </div>
 
 <div>
