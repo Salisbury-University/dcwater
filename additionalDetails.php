@@ -44,7 +44,7 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 <div style="margin-top: 20px;">
 <form action="upload.php" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: row;">
  <label for="cameraInput">
- <span class="greyButton"><img src="Images/Camera.png" style="margin-right:15px; margin-left:10px;">take a Photo</span>
+ <span class="greyButton"><img src="Images/Camera.png" style="margin-right:15px; margin-left:10px;">Take a Photo</span>
    <input 
         id="cameraInput"
         type="file"
@@ -122,10 +122,10 @@ function writeText(){
 function pageDecide(){
 let inOrout = sessionStorage.getItem('problemType'); 
 if(inOrout.toString()=="Damages"|| inOrout.toString()=="OutFlood" ){
-    document.getElementById("prevButton").attribute("onclick","location.href='Step3Out.php'");
+    document.getElementById("prevButton").setAttribute("onclick","location.href='Step3Out.php'");
    
 }else{
-     document.getElementById("prevButton").attribute("onclick","location.href='Step3In.php'");
+     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3In.php'");
 }
 }
 </script>
