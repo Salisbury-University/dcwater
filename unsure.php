@@ -89,12 +89,15 @@ function writeText(){
 
 </body>
 <script type="text/javascript">
-let inOrout = sessionStorage.getItem('problem'); 
-if(inOrout.toString()=="Indoor"){
-    document.getElementById("prevButton").attribute("onclick","location.href='Step3In.php");
+pageDecide();   
+function pageDecide(){
+let inOrout = sessionStorage.getItem('problemType'); 
+if(inOrout.toString()=="Damages"|| inOrout.toString()=="OutFlood" ){
+    document.getElementById("prevButton").setAttribute("onclick","location.href='Step3Out.php'");
+   
+}else{
+     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3In.php'");
 }
-if(inOrout.toString()=="Outdoor"){
-    document.getElementById("prevButton").attribute("onclick","location.href='Step3Out.php");
 }
 </script>
 </html>
