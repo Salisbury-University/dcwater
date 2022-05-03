@@ -113,12 +113,13 @@ function writeText(){
 
 <div class="bottomNav">
 
-<button onclick="pageDecide()" type="button" id = "prevButton"  class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
+<button onclick=" " type="button" id = "prevButton"  class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
 <button onclick="location.href='contactInformation.php' " type="button" id="nextButton" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
 
 </div>
 </body>
 <script type="text/javascript">
+pageDecide();   
 function pageDecide(){
 let inOrout = sessionStorage.getItem('problemType'); 
 if(inOrout.toString()=="Damages"|| inOrout.toString()=="OutFlood" ){
