@@ -60,7 +60,6 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 </label>
 </form>
 </div>
-<div id="progress"></div>
 <script type="text/javascript">
  function fileSelected() {
  
@@ -115,32 +114,9 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
         var xhr = new XMLHttpRequest();
  
         xhr.open("POST", "savetofile.php");
-        xhr.upload.addEventListener("progress", uploadProgress, false);
-        xhr.addEventListener("load", uploadComplete, false);
-        xhr.addEventListener("error", uploadFailed, false);
-        xhr.addEventListener("abort", uploadCanceled, false);
         xhr.send(fd);
  
       }     
-      function uploadProgress(evt) {
-        if (evt.lengthComputable) {
-          var percentComplete = Math.round(evt.loaded * 100 / evt.total);
-          document.getElementById('progress').innerHTML = percentComplete.toString() + '%';
-        }
-        else {
-          document.getElementById('progress').innerHTML = 'Upload error!';
-        }
-      }
-      function uploadComplete(evt) {
-        alert(evt.target.responseText);
-      }
-      function uploadFailed(evt) {
-        alert("Error sendin file...");
-      }
-      function uploadCanceled(evt) {
-        alert("Upload cancelled by the user or network error!");
-      } 
-
 </script>
 <div style="margin-right:16px;">
 <div style="margin-top:20px;">
