@@ -41,23 +41,85 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
     <span class = "bold">Add A Photo</span>
 </div>
 <div style="margin-top: 20px;">
-<form action="upload.php" method="post" enctype="multipart/form-data" style="display: flex; flex-direction: row;">
+<form method="post" enctype="multipart/form-data" style="display: flex; flex-direction: row;" action="savetofile.php">
  <label for="cameraInput">
- <span class="greyButton"><img src="Images/Camera.png" style="margin-right:15px; margin-left:10px;">take a Photo</span>
+ <span class="greyButton"><img src="Images/Camera.png" style="margin-right:15px; margin-left:10px;">Take a Photo</span>
    <input 
         id="cameraInput"
         type="file"
         accept="image/*"
         capture="camera"
+        onchange="fileSelected();"
       />
 </label>
 
 <label for="uploadButton">
 <span class="greyButton2"><img src="Images/upload.png" style="margin-right:15px; margin-left:10px;">Upload</span>
-<input type="submit" value="Upload Image" name="submit" id="uploadButton">    
+<input type="button" value="Upload Image" name="submit" id="uploadButton" onclick="uploadFile()">    
 </label>
 </form>
 </div>
+<script type="text/javascript">
+ function fileSelected() {
+ 
+        var count = document.getElementById('cameraInput').files.length;
+ 
+ 
+              for (var index = 0; index < count; index ++)
+ 
+              {
+ 
+                     var file = document.getElementById('cameraInput').files[index];
+ 
+                     var fileSize = 0;
+ 
+                     if (file.size > 1024 * 1024)
+ 
+                            fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
+ 
+                     else
+ 
+                            fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+ 
+                     sessionStorage.setItem('photoName',file.name); 
+                     sessionStorage.setItem('photoType',file.type);
+                     sessionStorage.setItem('photoSize',fileSize); 
+                     alert(file.name);
+
+                    
+
+ 
+              }
+                   
+ 
+      }  
+
+  function uploadFile() {
+    alert("click");
+ 
+        var fd = new FormData();
+ 
+              var count = document.getElementById('cameraInput').files.length;
+ 
+              for (var index = 0; index < count; index ++)
+ 
+              {
+ 
+                     var file = document.getElementById('cameraInput').files[index];
+ 
+                     fd.append('myFile', file);
+ 
+              }
+ 
+        var xhr = new XMLHttpRequest();
+ 
+        xhr.open("POST", "savetofile.php");
+ 
+        xhr.send(fd);
+ 
+      }      
+
+</script>
 
 <div style="margin-top:20px;">
      <span class = "bold">Desription<span style="color:red;">*</span></span>
@@ -75,9 +137,6 @@ function writeText(){
     alert(description);
 }
 </script>
-
-
-
 
 <div class="bottomNav">
 
