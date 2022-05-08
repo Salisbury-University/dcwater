@@ -126,14 +126,14 @@
 <div style="margin-top:20px; margin-left: 16px;">
     <form name="nameText" method="post">
 <label for="fname" class="boxLabel">Full Name</label>
-<input type="text" id="fname" onchange="writeName()" name="fname" class="tBox" placeholder="Enter Your Full Name Here...">   
+<input type="text" id="fname" onchange="writeName()" name="fname" class="tBox" placeholder="Ex: John Doe">   
 </form>
 
 </div>
 <div style="margin-top:20px; margin-left: 16px;">
   <form name="emailText" method="post">   
 <label for="fname" class="boxLabel">Email</label>
-<input type="text" id="email" name="email" class="tBox" onchange="writeEmail()"  placeholder="Enter Your Email Address Here...">   
+<input type="text" id="email" name="email" class="tBox" onchange="writeEmail()"  placeholder="Ex: jDoe@gmail.com">   
 </form>
 
 </div>
@@ -141,7 +141,7 @@
 <div style="margin-top:20px; margin-left: 16px; margin-bottom: 100px;">
  <form name="phoneText" method="post"> 
 <label for="fname" class="boxLabel">Phone Number</label>
-<input type="text" id="phoneNum" name="phoneNum" class="tBox" onchange="writePhone()" placeholder="Enter Your Phone Number Here...">   
+<input type="text" id="phoneNum" name="phoneNum" class="tBox" onchange="writePhone()" placeholder="Ex: 123-456-7890 ">   
 </form>
 </div>
 <script type="text/javascript">
@@ -172,8 +172,18 @@
 <button onclick="location.href='Review1.php'" type="button" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
 
 </div>
-
-
+<script type="text/javascript">
+pageDecide();   
+function pageDecide(){
+let inOrout = sessionStorage.getItem('problemType'); 
+if(inOrout.toString()=="Other"){
+    document.getElementById("prevButton").setAttribute("onclick","location.href='unsure.php'");
+   
+}else{
+     document.getElementById("prevButton").setAttribute("onclick","location.href='additionalDetails.php'");
+}
+}
+</script>
 </body>
 </html>
 
