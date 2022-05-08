@@ -114,10 +114,21 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
         var xhr = new XMLHttpRequest();
  
         xhr.open("POST", "savetofile.php");
- 
+        xhr.addEventListener("load", uploadComplete, false);
+        xhr.addEventListener("error", uploadFailed, false);
+        xhr.addEventListener("abort", uploadCanceled, false);
         xhr.send(fd);
  
-      }      
+      }   
+       function uploadComplete(evt) {
+        alert(evt.target.responseText);
+      }
+      function uploadFailed(evt) {
+        alert("Error sendin file...");
+      }
+      function uploadCanceled(evt) {
+        alert("Upload cancelled by the user or network error!");
+      }        
 
 </script>
 
