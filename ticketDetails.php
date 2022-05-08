@@ -42,46 +42,32 @@
 <span class="trackText">2694570030</span>
 
 </div>
-
-<div style="margin-top:18px; margin-left:16px;" class="grid-container">
-
-<!--- SECTION WILL BE FINISHED WHEN THE DATABASE IS READY  --->
-    <div class="field">
-    <div class="progBar activeBar" ></div>
-    <div class="progLabel activeLabel">Ticket Opened</div>
-    </div>
-
-    <div class="field">
-    <div class="progBar"></div>
-    <div class="progLabel " >Under Review</div>
-    </div>
+<div>
+<div class="progContainer" style="margin-bottom: 50px;"></div>
 
 
-    <div class="field">
-    <div  class="progBar"></div>
-    <div class="progLabel">Repair in progress</div>
-    </div>
-
-    <div class="field">
-    <div class="progBar"></div>
-    <div class="progLabel">Ticket Closed</div>
-    </div>
-</div>
-
-<div style="margin-top: 20px; margin-left:16px;">
-
-   <span class = "smallBold">Next Steps</span> 
-
-</div>
-
-<div class="nextSteps" style="margin-left: 16px;">
-
-    <p>DC Water has dispatched a field crew to work on repairs.</p>
-    <p>Please feel free to refer back to this confirmation page for updates to the case. You may also reach us at (202) 612-3400.</p>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script type="text/javascript">
     
+ let ticketStatus = "ticketOpened" 
+if (ticketStatus.toString()=="ticketOpened") {
+    $(".progContainer").load("ticketOpened.php");
+}
+if (ticketStatus.toString()=="underReview") {
+ $(".progContainer").load("underReview.php");
+} 
+if (ticketStatus.toString()=="repairInProgress"){
+     $(".progContainer").load("repairInProgress.php");
+
+} 
+if (ticketStatus.toString()=="ticketClosed") {
+     $(".progContainer").load("ticketClosed.php");
+}
+
+</script>
 </div>
 
-<div style="margin-left: 16px; margin-top: 20px;" id="buttonDiv">
+<div style="margin-left: 16px; margin-top: 30px;" id="buttonDiv">
     <button id="caseHistoryAction" type="button" class ="caseButton active">Case History</button>
     <button id="ticketHistoryAction" type="button" class = "caseButton">Ticket History</button>
 </div>
@@ -90,7 +76,7 @@
 </div>
 
 <div style="margin-top:35px; margin-bottom: 40px;">
-    <button type="button" class="anotherReport">Report Another Problem</button> 
+    <button type="button" onclick="location.href='Begin.php'" class="anotherReport">Report Another Problem</button> 
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
