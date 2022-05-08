@@ -164,7 +164,7 @@ if (problemType.toString()=="Quality") {
 </div>
 
 <div>
-     <span class = "bold">Desription<span style="color:red;">*</span></span>
+     <span class = "bold">Desription</span>
 </div>
 
 <div style="margin-top:20px; margin-left: 16px; margin-bottom: 100px;">
