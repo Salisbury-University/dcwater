@@ -85,9 +85,11 @@ color: #BFBFBF;
 
 <!--- PUT CONTENT HERE---> 
 
+<!-- Box outline w/ X button that leads to the beginning -->
 <div class = "outline">
 <img onclick="window.location.href = 'Begin.php';" style="margin-left:285px" src = "Images/CloseButton.png">
 
+<!-- Text -->
 <div class = "bluetext" style="margin-top:20px">
 Your feedback is important to us!
 </div>
@@ -100,10 +102,12 @@ We appreciate your time and effort. We want to learn how we can improve your exp
 What would you like to share with us?
 </div>
 
+<!-- Text area w/ placeholder -->
 <div>
 <textarea placeholder="Enter text here..."></textarea>
 </div>
 
+<!-- Submit button. Currently does not submit feedback into the database -->
 <div onclick="window.location.href = 'FeedbackSub.php';" class = "submitbutton">
 Submit
 </div>
