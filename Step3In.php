@@ -166,6 +166,7 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 
 <!--- PUT CONTENT HERE--->
 
+<!-- Flood button -->
 <div id = "Flood" class = "bigbutton" onclick="ChangeColor(); swapImg(); activateFlood();">
 Flooding / Leaking
 <p class = "rando">Report an excess of water or water flow issue</p>
@@ -175,7 +176,7 @@ Flooding / Leaking
 </div>
 
 
-
+<!-- Water Pressure button -->
 <div id = "Pressure" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activatePressure();">
 Water Pressure
 <p class = "rando">Report a low water pressure issue</p>
@@ -185,7 +186,7 @@ Water Pressure
 </div>
 
 
-
+<!-- No Water button -->
 <div id = "NoWater" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateNoWater();">
 No Water
 <p class = "rando">Report a water outage or access issue</p>
@@ -195,7 +196,7 @@ No Water
 </div>
 
 
-
+<!-- Water Quality button -->
 <div id = "Quality" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateQuality();">
 Water Quality
 <p class = "rando">Report discolored, polluted, or cloudy water</p>
@@ -205,7 +206,7 @@ Water Quality
 </div>
 
 
-
+<!-- Other button -->
 <div id = "Other" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateOther();">
 Other
 <p class = "rando">Select this option if the above categories don't apply</p>
@@ -215,7 +216,7 @@ Other
 </div>
 
 
-
+<!-- Fotter -->
 <div class="bottomNav" style="margin-top:250px">
 <button onclick="window.location.href = 'Step2.php';" type="button"  class="prevButton"><span class="prevButtonText"><img class="prevArrow" src="Images/ArrowBlue.png">Back</span></button>
 <button onclick="#" type="button" id="ForColor" class="nextButton" disabled><span id="ForColor">Next<img class="nextArrow" id="ImgColor" src="Images/ArrowBlack.png"></span></button>
@@ -225,6 +226,7 @@ Other
 
 <script type="text/javascript">
 
+//Change color for the Next button and reenable
 document.getElementById("ForColor").style.background = "#DDDDDD";
 function ChangeColor(){
 if (document.getElementById("Flood").value == "" || document.getElementById("Pressure").value == "" || document.getElementById("NoWater").value == "" || document.getElementById("Quality").value == "" || document.getElementById("Other").value == ""){
@@ -236,6 +238,7 @@ document.getElementById("ForColor").disabled = false;
 }
 }
 
+//Change arrow image for Next button
 function swapImg(){
 if (document.getElementById("ImgColor").src.endsWith("ArrowBlack.png") == true){
 document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
@@ -244,6 +247,7 @@ document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
 }
 }
 
+//Display active Flood button and disable other buttons
 function activateFlood(){
 document.getElementById("Flood").className = "bigbuttonblue";
 document.getElementById("HalfFlood").className = "halfbuttonactive";
@@ -269,6 +273,7 @@ location.href = "AdditionalDetails.php";
 sessionStorage.setItem('problemType', 'InFlood');
 }
 
+//Display active Pressure button and disable other buttons
 function activatePressure(){
 document.getElementById("Pressure").className = "bigbuttonblue";
 document.getElementById("HalfPressure").className = "halfbuttonactive";
@@ -294,6 +299,7 @@ location.href = "AdditionalDetails.php";
 sessionStorage.setItem('problemType', 'Pressure');
 }
 
+//Display active NoWater button and disable other buttons
 function activateNoWater(){
 document.getElementById("NoWater").className = "bigbuttonblue";
 document.getElementById("HalfNoWater").className = "halfbuttonactive";
@@ -319,6 +325,7 @@ location.href = "AdditionalDetails.php";
 sessionStorage.setItem('problemType', 'NoWater');
 }
 
+//Display active Quality button and disable other buttons
 function activateQuality(){
 document.getElementById("Quality").className = "bigbuttonblue";
 document.getElementById("HalfQuality").className = "halfbuttonactive";
@@ -344,6 +351,7 @@ location.href = "AdditionalDetails.php";
 sessionStorage.setItem('problemType', 'Quality');
 }
 
+//Display active Other button and disable other buttons
 function activateOther(){
 document.getElementById("Other").className = "bigbuttonblue";
 document.getElementById("HalfOther").className = "halfbuttonactive";
