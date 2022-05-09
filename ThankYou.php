@@ -86,39 +86,46 @@ top: -5px;
 <!--- END OF NAVBAR ---> 
 <!--- PUT CONTENT HERE--->
 
+<!-- Checkmark image -->
 <div>
 <img class = "checkmark" src="Images/Completed.png">
 </div>
 
+<!-- "Thank You " text -->
 <div class = "sometext" style="margin-top:10px;font-weight:700;font-size:24px">
 Thank You!
 </div>
 
+<!-- More text -->
 <div class = "sometext" style="margin-top:-50px;font-weight:400;font-size:18px">
 Your form has been submitted.
 <p class = "bolder">Please keep the following ticket number for your records: #</p>
 </div>
 
+<!-- View Ticket Status button. Leads to ticket details page -->
 <div onclick="window.location.href = 'ticketDetails.php';" class = "bigbutton" style="background-color:#0075C9;color:#FFFFFF">
 View Ticket Status
 </div>
 
-<a href="Begin.php">
-<div class = "bigbutton" style="background-color:#FFFFFF;color:#0075C9;border:2px solid #0075C9;margin-top:10px">
+<!-- Report Another Problem button. Leads back to beginning -->
+<div onclick="window.location.href = 'Begin.php';" class = "bigbutton" style="background-color:#FFFFFF;color:#0075C9;border:2px solid #0075C9;margin-top:10px">
 Report Another Problem
 </div>
-</a>
 
-
+<!-- Share button. Unsure of functionality-->
+<label for="sharing">
 <div class = "bigbutton" style="background-color:#FFFFFF;color:#0075C9;border:2px solid #0075C9; margin-top:10px">
 <img src="Images/Share.png"><span class = "shareText">  Share</span>
+<input style="border:2px solid #FFFFFF;background-color:#FFFFFF" type="button" id="sharing">
 </div>
+</label>
 
 </div>
 </body>
 
 <script type="text/javascript">
 
+//Implementation of WebShare API
 const shareData = {
 title: 'DC Water',
 text: 'Ticket number',
