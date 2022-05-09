@@ -166,6 +166,7 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 
 <!--- PUT CONTENT HERE---> 
 
+<!-- Outdoor button -->
 <div id = "Out" class = "bigbutton" onclick="ChangeColor(); swapImg(); activateOut();">
 Outdoors
 <p class = "rando">Report a problem located in an outdoor area</p>
@@ -176,7 +177,7 @@ Outdoors
 
 
 
-
+<!-- Indoor Button -->
 <div id = "In" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateIn();">
 Indoors
 <p class = "rando">Report a problem located inside a building</p>
@@ -185,11 +186,13 @@ Indoors
 <img class = "icon" src="Images/Indoor.png">
 </div>
 
+<!-- Text below buttons w/ link to unsure.php -->
 <div style="font-family:'Fira Sans', sans-serif;font-size:18px;color:#2D2D2D;text-align:center;width:320px;height:80px;margin-left:25px;">
 If the options above do not apply, please 
 <a href="unsure.php">describe your issue here.</a>
 </div>
 
+<!-- Footer -->
 <div class="bottomNav" style="margin-top:250px">
 <button onclick="window.location.href = 'Location.php';" type="button"  class="prevButton"><span class="prevButtonText"><img class="prevArrow" src="Images/ArrowBlue.png">Back</span></button>
 <button onclick="#" type="button" id="ForColor" class="nextButton" disabled><span id="ForColor">Next<img class="nextArrow" id="ImgColor" src="Images/ArrowBlack.png"></span></button>
@@ -199,6 +202,7 @@ If the options above do not apply, please
 </body>
 <script type="text/javascript">
 
+//Change color of the Next button and reenable
 document.getElementById("ForColor").style.background = "#DDDDDD";
 function ChangeColor(){
 if (document.getElementById("Out").value == "" || document.getElementById("In").value == ""){
@@ -211,6 +215,7 @@ document.getElementById("ForColor").disabled = false;
 
 }
 
+//Change arrow image of the Next button
 function swapImg(){
 if (document.getElementById("ImgColor").src.endsWith("ArrowBlack.png") == true){
 document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
@@ -220,6 +225,7 @@ document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
 
 }
 
+//Display active Outdoor button and disable Indoor if it's active
 function activateOut(){
 document.getElementById("Out").className = "bigbuttonblue";
 document.getElementById("HalfOut").className = "halfbuttonactive";
@@ -232,6 +238,7 @@ document.getElementById("In").className = "bigbutton";
 }
 }
 
+//Display active Indoor button and disable Outdoor if it's active
 function activateIn(){
 document.getElementById("In").className = "bigbuttonblue";
 document.getElementById("HalfIn").className = "halfbuttonactive";
