@@ -167,6 +167,7 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 
 <!--- PUT CONTENT HERE---> 
 
+<!-- Flood Button -->
 <div id = "Flood" class = "bigbutton" onclick="ChangeColor(); swapImg(); activateFlood();">
 Flooding / Leaking
 <p class = "rando">Report an excess of water or water flow issue</p>
@@ -177,7 +178,7 @@ Flooding / Leaking
 
 
 
-
+<!-- Damage Button -->
 <div id = "Damage" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateDamage();">
 Damage
 <p class = "rando">Report defective, hazardous, or missing equipment</p>
@@ -188,7 +189,7 @@ Damage
 
 
 
-
+<!-- Other Button -->
 <div id = "Other" class = "bigbutton" style="margin-top:-75px" onclick="ChangeColor(); swapImg(); activateOther();">
 Other / Not Sure
 <p class = "rando">Select this option if the above categories don't apply</p>
@@ -197,7 +198,7 @@ Other / Not Sure
 <img class = "icon" src="Images/Other.png">
 </div>
 
-
+<!-- Footer -->
 <div class="bottomNav" style="margin-top:250px">
 <button onclick="window.location.href = 'Step2.php';" type="button"  class="prevButton"><span class="prevButtonText"><img class="prevArrow" src="Images/ArrowBlue.png">Back</span></button>
 <button onclick="#" type="button" id="ForColor" class="nextButton" disabled><span id="ForColor">Next<img class="nextArrow" id="ImgColor" src="Images/ArrowBlack.png"></span></button>
@@ -207,6 +208,7 @@ Other / Not Sure
 
 <script type="text/javascript">
 
+//Change color of Next button and reenable
 document.getElementById("ForColor").style.background = "#DDDDDD";
 function ChangeColor(){
 if (document.getElementById("Flood").value == "" || document.getElementById("Damage").value == "" || document.getElementById("Other").value == ""){
@@ -218,6 +220,7 @@ document.getElementById("ForColor").disabled = false;
 }
 }
 
+//Swap arrow image of Next button
 function swapImg(){
 if (document.getElementById("ImgColor").src.endsWith("ArrowBlack.png") == true){
 document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
@@ -226,6 +229,7 @@ document.getElementById("ImgColor").src = "Images/ArrowWhite.png";
 }
 }
 
+//Display active Flood button and disable other buttons
 function activateFlood(){
 document.getElementById("Flood").className = "bigbuttonblue";
 document.getElementById("HalfFlood").className = "halfbuttonactive";
@@ -243,6 +247,7 @@ location.href = "AdditionalDetails.php";
 sessionStorage.setItem('problemType', 'OutFlood');
 }
 
+//Display active Damage button and disable other buttons
 function activateDamage(){
 document.getElementById("Damage").className = "bigbuttonblue";
 document.getElementById("HalfDamage").className = "halfbuttonactive";
@@ -260,6 +265,7 @@ location.href = "AdditionalDetails.php";
 sessionStorage.setItem('problemType', 'Damage');
 }
 
+//Display active Other button and disable other buttons
 function activateOther(){
 document.getElementById("Other").className = "bigbuttonblue";
 document.getElementById("HalfOther").className = "halfbuttonactive";
