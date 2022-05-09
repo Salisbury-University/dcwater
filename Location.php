@@ -35,13 +35,11 @@
 <span><input type="text" method="post" name="ColorChange" id="ColorChange" class="InputLocation" placeholder="Enter Location..."
 onkeyup="ChangeColor(); changeImage()"/>
 </form>
-<?php
-if(isset($_POST['ColorChange']))
-{
-$_SESSION['location']=$_POST['ColorChange'];
-echo $_SESSION['location'];
-}
-?>
+<script>
+//var locationValue=document.getElementById('ColorChange');
+//sessionStorage.setItem('ColorChange', locationValue);
+//alert(locationValue);
+</script>    
 <img src="Images/searchIcon.png" class="searchIcon" width=10/></span>
 </div>  
 
@@ -64,6 +62,8 @@ function showPosition() {
     function showMap(position) {
         // Get location data
         var latlong = position.coords.latitude + "," + position.coords.longitude;
+        sessionStorage.setItem('ColorChange', latlong);
+        alert(latlong);
         document.getElementById("ColorChange").value=latlong;
         var coordinates=latlong;
         
@@ -76,15 +76,15 @@ function showPosition() {
     }
 </script>
 </div>
-  <div id="embedMap">
-          <!--Google map will be embedded here-->
-      </div>
+<div id="embedmap" class="embeddedmap">
+  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198649.63541442878!2d-77.25717103594643!3d38.92625044229344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b0990faad959%3A0x4312e2dc603cee0c!2sDistrict%20of%20Columbia%20Water%20and%20Sewer%20Authority!5e0!3m2!1sen!2sus!4v1651692268868!5m2!1sen!2sus" width="94%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</div>
 
 <div class="bottomNav">
 <button onclick="window.location='Begin.php'" type="button"  class="prevButton"><span class="prevButtonText">
 <img img src="Images/ArrowBlue.png"class="Arrow-Blue"> 
 &nbsp &nbsp &nbsp Back</span></button>
-<button onclick="window.location='Step2.php'" type="submit" id="ForColor"class="nextButton"><span id="ForColorText" class="nextButtonText">
+<button onclick="window.location='Step2.php'; ChangeColor()" type="submit" id="ForColor"class="nextButton" disabled><span id="ForColorText" class="nextButtonText">
 &nbsp &nbsp &nbsp
 Next
 <img name="arrowBlack" id="arrowBlack" img src="Images/ArrowBlack.png"class="Arrow-White"></span></button>
@@ -98,6 +98,7 @@ Next
       if (document.getElementById("ColorChange").value == "") {
          document.getElementById("ForColor").style.background = "#DDDDDD";
       } else {
+          document.getElementById("ForColor").disabled=false;
          document.getElementById("ForColor").style.background = "#0075C9";
       }
       if (document.getElementById("ColorChange").value == "") {

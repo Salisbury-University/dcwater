@@ -219,3 +219,10 @@ bottom: 0px;
   ;
   z-index: 999999;
 }
+
+.embeddedmap
+{
+position:relative;
+margin-top: -400px;
+margin-left: 16px;
+}
