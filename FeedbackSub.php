@@ -55,9 +55,11 @@ color: #000000
 
 <!--- PUT CONTENT HERE---> 
 
+<!-- Box outline w/ X button that leads to the beginning -->
 <div class = "outline">
 <img onclick="window.location.href = 'Begin.php';" style="margin-left:285px" src = "Images/CloseButton.png">
 
+<!-- Text -->
 <div class = "bluetext" style="margin-top:20px">
 Thank you for submitting your feedback!
 </div>
