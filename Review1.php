@@ -4,7 +4,7 @@
 <head>
 	<link href="Review.css" rel="stylesheet" type="text/css">
     <link href="navbarFormat.css" rel="stylesheet" type="text/css">
-    <link href="footerFormatReview.css" rel="stylesheet" type="text/css" >
+    <link href="footerFormat.css" rel="stylesheet" type="text/css" >
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 </head>
@@ -56,7 +56,10 @@ Location:
 </div>
 
 <div id= "FirstTextBox" class="FirstTextBox" readonly>
-<br>  
+<br> 
+<script>
+document.getElementById("FirstTextBox").innerHTML = sessionStorage.getItem("ColorChange");
+</script> 
 </div>
 
 <div>
@@ -66,22 +69,17 @@ Location:
 <div class="Box2">
 <img src="Images/LeftSideBox.png"class="LeftSideBox2">
 <img src="Images/Pencil.png"class="Pencil2">
-<span onclick="window.location='###'"class="Edit2"> Edit </span>
+<span onclick="window.location='Step2.php'"class="Edit2"> Edit </span>
 </div>
 
 <div class="Issue">
 <span>Issue:</span>
 </div>
 
-<div class="SecondBoxText">
-<?php
-if (isset($_SESSION['problemType']))
-{
-echo $_SESSION['problemType'];   
-} else {
-//header("location:http://localhost/COSC425/Begin.php");
-}
-?>
+<div class="SecondBoxText" id="SecondBoxText">
+<script>
+document.getElementById("SecondBoxText").innerHTML = sessionStorage.getItem("problemType");
+</script> 
 </div>
 
 
@@ -89,21 +87,21 @@ echo $_SESSION['problemType'];
 <div class="Box3">
 <img src="Images/LeftSideBox.png"class="LeftSideBox3">
 <img src="Images/Pencil.png"class="Pencil3">
-<span onclick="window.location='###'" class="Edit3"> Edit </span>
+<span id ="Edit3" onclick="pageDecide();" class="Edit3"> Edit </span>
 </div>
 
 <div class="PhotosAndVideos">
 <span>Photos & Videos:</span>
 </div>
-<div class="ThirdBoxText">
-<?php
-if (isset($_SESSION['photos']))
-{
-echo $_SESSION['photos'];   
+<div id ="ThirdBoxText"class="ThirdBoxText">
+<script>
+if (sessionStorage.getItem("photoName")==null) {
+    var none="None";
+    document.getElementById("ThirdBoxText").innerHTML=none;
 } else {
-//header("location:http://localhost/COSC425/Begin.php");
+document.getElementById("ThirdBoxText").innerHTML = sessionStorage.getItem("photoName");
 }
-?>
+</script> 
 </div>
 
 
@@ -114,21 +112,30 @@ echo $_SESSION['photos'];
 
 <div class="bottomNav">
 
-<button onclick="window.location='contactInformation.php'" type="button"  class="prevButton">
-<span> 
-<img src="Images/ArrowBlue.png" class="BlueArrow">
-</span>
-<span class="Back"> Back
+<button onclick="window.location='ContactInformation.php'" type="button"  class="prevButton">
+<span class="prevButtonText"> 
+<img src="Images/ArrowBlue.png" class="prevArrow">
+ Back
 </span>
 </button>
-<button onclick="window.location='ThankYou.php'" type="button" class="nextButton">
-<span class="Next">Next</span>
-<span> 
+<button onclick="window.location='ThankYou.php'" type="button" class="nextButton" style="border-color: none;">
+<span class="nextButtonText">Next
 <img src="Images/ArrowWhite.png" class="WhiteArrow">
 </span>
 </button>
 
 </div>
+
+<script>
+function pageDecide() {
+let inOrOut=sessionStorage.getItem("problemType");
+if (inOrOut.toString()=="other") {
+    window.location='unsure.php';
+} else {
+    window.location='additionalDetails.php';
+}
+}
+</script>    
 
 </body>
 </html>

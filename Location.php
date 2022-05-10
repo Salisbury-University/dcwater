@@ -5,7 +5,7 @@
 <head>
 	<link href="Location.css" rel="stylesheet" type="text/css">
     <link href="navbarFormat.css" rel="stylesheet" type="text/css">
-    <link href="footerformatLocation.css" rel="stylesheet" type="text/css" >
+    <link href="footerFormat.css" rel="stylesheet" type="text/css"
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 <body>
@@ -33,12 +33,14 @@
 <div>
 <form method="post">
 <span><input type="text" method="post" name="ColorChange" id="ColorChange" class="InputLocation" placeholder="Enter Location..."
-onkeyup="ChangeColor(); changeImage()"/>
+onkeyup="ChangeColor(); changeImage(); setVariable();"/>
 </form>
 <script>
-//var locationValue=document.getElementById('ColorChange');
-//sessionStorage.setItem('ColorChange', locationValue);
-//alert(locationValue);
+function setVariable() {
+    var locationValue=document.getElementById("ColorChange").value;
+    sessionStorage.setItem('ColorChange', locationValue);  
+}
+
 </script>    
 <img src="Images/searchIcon.png" class="searchIcon" width=10/></span>
 </div>  
@@ -55,6 +57,7 @@ onkeyup="ChangeColor(); changeImage()"/>
 <div id="googleMap" style="width:90%;height:400px;"></div>
 
 <script>
+    
 function showPosition() {
         navigator.geolocation.getCurrentPosition(showMap);
     }
@@ -77,17 +80,23 @@ function showPosition() {
 </script>
 </div>
 <div id="embedmap" class="embeddedmap">
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198649.63541442878!2d-77.25717103594643!3d38.92625044229344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b0990faad959%3A0x4312e2dc603cee0c!2sDistrict%20of%20Columbia%20Water%20and%20Sewer%20Authority!5e0!3m2!1sen!2sus!4v1651692268868!5m2!1sen!2sus" width="94%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198649.63541442878!2d-77.25717103594643!3d38.92625044229344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b0990faad959%3A0x4312e2dc603cee0c!2sDistrict%20of%20Columbia%20Water%20and%20Sewer%20Authority!5e0!3m2!1sen!2sus!4v1651692268868!5m2!1sen!2sus" width="94%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+   <script>
+    /*
+    If DC Water would like to replace this code with a Google maps API, they just need to sign up for the key
+    and copy and paste the code into here. I did not include the Google maps API because it costs money per
+    28,500 uses per month. I highly doubt that DC Water will have this many interactions, but to be safe,
+    I did not want to enter any of my perosonal payment information. Insert the Google Maps API here. You can
+    simply copy and paste the code from the Google maps website.
+    */
+    </script>
 </div>
 
 <div class="bottomNav">
-<button onclick="window.location='Begin.php'" type="button"  class="prevButton"><span class="prevButtonText">
-<img img src="Images/ArrowBlue.png"class="Arrow-Blue"> 
-&nbsp &nbsp &nbsp Back</span></button>
-<button onclick="window.location='Step2.php'; ChangeColor()" type="submit" id="ForColor"class="nextButton" disabled><span id="ForColorText" class="nextButtonText">
-&nbsp &nbsp &nbsp
+<button onclick="window.location='Begin.php'" type="button"  class="prevButton"><span class="prevButtonText"><img img src="Images/ArrowBlue.png"class="prevArrow">Back </span></button>
+<button onclick="window.location='Step2.php'; ChangeColor()" type="submit" id="ForColor"class="nextButton" style="border-color: none;" disabled><span id="ForColorText" class="nextButtonText">
 Next
-<img name="arrowBlack" id="arrowBlack" img src="Images/ArrowBlack.png"class="Arrow-White"></span></button>
+<img name="arrowBlack" id="arrowBlack" img src="Images/ArrowBlack.png"class="nextArrow"></span></button>
 </div>
 </body>
 <script>

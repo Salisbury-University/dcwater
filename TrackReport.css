@@ -217,8 +217,8 @@ flex-grow: 0;
 {
   letter-spacing: 0.001in;
   font-family: 'Fira Sans', sans-serif;
-  font-style: bold;
-  font-weight: 600;
+
+  font-weight: 400;
   font-size: 14px;
   line-height: 150%;
   color: white;

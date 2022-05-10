@@ -36,15 +36,16 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 </div>
 <div>
 <form method="post">
-<input type="text" name="TicketNumber" id="ColorChange"class="InputLocation" placeholder="Enter ticket number here..."
-onkeyup="ChangeColor(); changeImage()"/>
+<input type="text" name="TicketNumber" id="TicketNumberColorChange"class="InputLocation" placeholder="Enter ticket number here..."
+onkeyup="ChangeColor(); changeImage(); setVariable();"/>
 </form>
-<?php
-if(isset($_POST['TicketNumber']))
-{
-$_SESSION['ticketNumber']=$_POST['TicketNumber'];
+<script>
+function setVariable() {
+    var ticketValue=document.getElementById("TicketNumberColorChange").value;
+    sessionStorage.setItem('ColorChange', ticketValue);
 }
-?>
+
+</script> 
 </div>
 
 <div class="TrackReportParagraph">
@@ -56,7 +57,7 @@ If you have difficulty finding your tracking number, you can call us at
 </div>
 <div class="bottomNav">
 <button onclick="window.location='Begin.php'" type="button" class="prevButton"><span class="prevButtonText">Report a Problem</span></button>
-<button onclick="window.location='ticketDetails.php'" type="button" id="ForColor" class="nextButton">
+<button onclick="window.location='ticketDetails.php'" style="border-color: none;" type="button" id="ForColor" class="nextButton" disabled>
 <span id="ForColorText" class="TrackEnd">Track</span>
 <span> 
 <img name="arrowBlack" id="arrowBlack"src="Images/ArrowBlack.png" class="WhiteArrow">
@@ -67,12 +68,13 @@ If you have difficulty finding your tracking number, you can call us at
     document.getElementById("ForColorText").style.color = "Black";
     document.getElementById("ForColor").style.background = "#DDDDDD";
     function ChangeColor(){
-      if (document.getElementById("ColorChange").value == "") {
+      if (document.getElementById("TicketNumberColorChange").value == "") {
          document.getElementById("ForColor").style.background = "#DDDDDD";
       } else {
          document.getElementById("ForColor").style.background = "#0075C9";
+         document.getElementById("ForColor").disabled=false;
       }
-      if (document.getElementById("ColorChange").value == "") {
+      if (document.getElementById("TicketNumberColorChange").value == "") {
          document.getElementById("ForColorText").style.color = "Black";
       } else {
          document.getElementById("ForColorText").style.color = "White";
@@ -85,7 +87,7 @@ If you have difficulty finding your tracking number, you can call us at
             if (Image_Id.src.match("Images/ArrowBlack.png")) {
                 Image_Id.src = "Images/ArrowWhite.png";
             }
-            if (document.getElementById('ColorChange').value== "")
+            if (document.getElementById('TicketNumberColorChange').value== "")
             {
               Image_Id.src = "Images/ArrowBlack.png";
             }
