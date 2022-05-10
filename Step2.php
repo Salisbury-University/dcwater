@@ -189,7 +189,7 @@ Indoors
 <!-- Text below buttons w/ link to unsure.php -->
 <div style="font-family:'Fira Sans', sans-serif;font-size:18px;color:#2D2D2D;text-align:center;width:320px;height:80px;margin-left:25px;">
 If the options above do not apply, please 
-<a href="unsure.php">describe your issue here.</a>
+<a href="unsure.php" onclick="StoreOther();">describe your issue here.</a>
 </div>
 
 <!-- Footer -->
@@ -236,6 +236,7 @@ location.href = "Step3Out.php";
 if (document.getElementById("In").classList.contains ("bigbuttonblue")){
 document.getElementById("In").className = "bigbutton";
 }
+sessionStorage.setItem('inOut', 'Outdoor');
 }
 
 //Display active Indoor button and disable Outdoor if it's active
@@ -249,8 +250,14 @@ location.href = "Step3In.php";
 if (document.getElementById("Out").classList.contains ("bigbuttonblue")){
 document.getElementById("Out").className = "bigbutton";
 }
+sessionStorage.setItem('inOut', 'Indoor');
 }
 
+//Store "Other" in sessionStorage
+function StoreOther(){
+sessionStorage.setitem('problemType', 'Other');
+sessionStorage.setItem('inOut', 'Other');
+}
 
 </script>
 
