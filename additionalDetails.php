@@ -2,6 +2,7 @@
 <!DOCTYPE html> 
 <html>
 <head>
+<!--- links to stylesheets used and imports used such as fontawesome and jquery --->
     <link href="styles.css" rel="stylesheet" type="text/css">
     <link href="navbarFormat.css" rel="stylesheet" type="text/css">
     <link href="footerFormat.css" rel="stylesheet" type="text/css" >
@@ -31,19 +32,18 @@
 <p id = "step">Problem Details</p>
 </div>
 
-<!--- THE CONTENT DEPENDS ON THE PAGE. SOME PAGES DONT EVEN 
-HAVE THIS TEXT SO CHECK WITH THE PAGE> ---> 
 
 
 
 <hr align="left">
-
+<!---Add a Photo section ---> 
 <div style="margin-top: 20px;" >
     <span class = "bold">Add A Photo</span>
 </div>
 <div style="margin-top: 20px;">
 <form method="post" enctype="multipart/form-data" style="display: flex; flex-direction: row;" action="savetofile.php">
  <label for="cameraInput">
+<!---camera input that accpets file input or mobile camera input ---> 
  <span class="greyButton"><img src="Images/Camera.png" style="margin-right:15px; margin-left:10px;">Take a Photo</span>
    <input 
         id="cameraInput"
@@ -53,14 +53,16 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
         onchange="fileSelected();"
       />
 </label>
-
+<!---upload button that uploads the picture to the folder ---> 
 <label for="uploadButton">
 <span class="greyButton2"><img src="Images/upload.png" style="margin-right:15px; margin-left:10px;">Upload</span>
 <input type="button" value="Upload Image" name="submit" id="uploadButton" onclick="uploadFile()">    
 </label>
 </form>
 </div>
+
 <script type="text/javascript">
+//function that gets the picture from the user and saves the photo name and type to the to session variables
  function fileSelected() {
  
         var count = document.getElementById('cameraInput').files.length;
@@ -72,21 +74,10 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
  
                      var file = document.getElementById('cameraInput').files[index];
  
-                     var fileSize = 0;
- 
-                     if (file.size > 1024 * 1024)
- 
-                            fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
- 
-                     else
- 
-                            fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+                    
  
                      sessionStorage.setItem('photoName',file.name); 
-                     sessionStorage.setItem('photoType',file.type);
-                     sessionStorage.setItem('photoSize',fileSize); 
-                     alert(file.name);
-
+                     sessionStorage.setItem('photoType',file.type);  
                     
 
  
@@ -95,6 +86,7 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
  
       }  
 
+//function that uploads the file to savetofile.php and returns a response to the user if it is subnitted correctly
   function uploadFile() {
  
         var fd = new FormData();
@@ -120,6 +112,8 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
         xhr.send(fd);
  
       }
+
+//functions that alerts the user a message if submitted
       function uploadComplete(evt) {
         alert(evt.target.responseText);
       }
@@ -130,6 +124,7 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
         alert("Upload cancelled by the user or network error!");
       }     
 </script>
+<!--- suggested tag section --->
 <div style="margin-right:16px;">
 <div style="margin-top:20px;">
 
@@ -139,6 +134,7 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript"> 
+//jquery request based off of previous session varaibles. loads php file into container div based on the problemType variable 
 let problemType = sessionStorage.getItem('problemType');
 if (problemType.toString()=="Damage") {
     $(".container").load("damages.php");
@@ -162,7 +158,7 @@ if (problemType.toString()=="Quality") {
 
 </script>
 </div>
-
+<!--- description section --->
 <div>
      <span class = "bold">Desription</span>
 </div>
@@ -173,15 +169,15 @@ if (problemType.toString()=="Quality") {
     </form>
 </div>
 <script type="text/javascript">
+//javaScript function that records the description and sets it to a session variable
 function writeText(){
     var description = document.forms["textForm"]["description"].value;
     sessionStorage.setItem('descriptionOfProblem',description);
-    alert(description);
 }
 </script>
 
 
-
+<!---bottom navigation bar section that brings the user to the next pages --->
 <div class="bottomNav">
 
 <button onclick=" " type="button" id = "prevButton"  class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
@@ -190,10 +186,13 @@ function writeText(){
 </div>
 </body>
 <script type="text/javascript">
-pageDecide();   
+//pageDecide is called when the page is loaded
+pageDecide(); 
+
+//function that decides what page the previous button sends the user based off of previous session variables
 function pageDecide(){
 let inOrout = sessionStorage.getItem('problemType'); 
-if(inOrout.toString()=="Damages"|| inOrout.toString()=="OutFlood" ){
+if(inOrout.toString()=="Damage"|| inOrout.toString()=="OutFlood" ){
     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3Out.php'");
    
 }else{
