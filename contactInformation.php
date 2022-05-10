@@ -168,7 +168,7 @@
 
 <div class="bottomNav">
 
-<button onclick="location.href='additionalDetails.php'" type="button" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
+<button onclick="#" type="button" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
 <button onclick="location.href='Review1.php'" type="button" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
 
 </div>
@@ -176,11 +176,12 @@
 pageDecide();   
 function pageDecide(){
 let inOrout = sessionStorage.getItem('problemType'); 
-if(inOrout.toString()=="Other"){
-    document.getElementById("prevButton").setAttribute("onclick","location.href='unsure.php'");
+if(inOrout.toString()=="Damage" || inOrout.toString()=="OutFlood" || inOrout.toString()=="InFlood"  || inOrout.toString()=="Pressure" || inOrout.toString()=="Quality" || inOrout.toString()=="NoWater" ){
+     document.getElementById("prevButton").setAttribute("onclick","location.href='additionalDetails.php'");
    
 }else{
-     document.getElementById("prevButton").setAttribute("onclick","location.href='additionalDetails.php'");
+     
+       document.getElementById("prevButton").setAttribute("onclick","location.href='unsure.php'");
 }
 }
 </script>
