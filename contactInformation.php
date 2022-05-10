@@ -173,15 +173,16 @@
 
 </div>
 <script type="text/javascript">
-pageDecide();   
+//pageDecide is called when the page is loaded
+pageDecide(); 
+//function that decides what page the previous button sends the user based off of previous session variables
 function pageDecide(){
-let inOrout = sessionStorage.getItem('problemType'); 
-if(inOrout.toString()=="Damage" || inOrout.toString()=="OutFlood" || inOrout.toString()=="InFlood"  || inOrout.toString()=="Pressure" || inOrout.toString()=="Quality" || inOrout.toString()=="NoWater" ){
-     document.getElementById("prevButton").setAttribute("onclick","location.href='additionalDetails.php'");
+let inOrout = sessionStorage.getItem('inOut'); 
+if(inOrout.toString()=="Other"){
+    document.getElementById("prevButton").setAttribute("onclick","location.href='unsure.php'");
    
 }else{
-     
-       document.getElementById("prevButton").setAttribute("onclick","location.href='unsure.php'");
+     document.getElementById("prevButton").setAttribute("onclick","location.href='additionalDetails.php'");
 }
 }
 </script>
