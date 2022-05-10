@@ -33,7 +33,7 @@
 <div>
 <form method="post">
 <span><input type="text" method="post" name="ColorChange" id="ColorChange" class="InputLocation" placeholder="Enter Location..."
-onchange="ChangeColor(); changeImage(); setVariable();"/>
+onkeyup="ChangeColor(); changeImage(); setVariable();"/>
 </form>
 <script>
 function setVariable() {
@@ -46,7 +46,7 @@ function setVariable() {
 </div>  
 
 <div>
-<button onclick="showPosition(); " type="button"  class="UseLocButton"><span class="LocButtonText">Use my location</span>
+<button onclick="showPosition(); allowButton(); changeImage();" type="button"  class="UseLocButton"><span class="LocButtonText">Use my location</span>
 <img src="Images/MapArrow.png"/></button>
 <button onclick="#" type="button"   class="DropPinButton"><span class="LocButtonText">Drop a Pin</span>
 <img src="Images/MapPin.png"/></button>
@@ -57,6 +57,8 @@ function setVariable() {
 <div id="googleMap" style="width:90%;height:400px;"></div>
 
 <script>
+
+
     
 function showPosition() {
         navigator.geolocation.getCurrentPosition(showMap);
@@ -80,7 +82,7 @@ function showPosition() {
 </script>
 </div>
 <div id="embedmap" class="embeddedmap">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198649.63541442878!2d-77.25717103594643!3d38.92625044229344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b0990faad959%3A0x4312e2dc603cee0c!2sDistrict%20of%20Columbia%20Water%20and%20Sewer%20Authority!5e0!3m2!1sen!2sus!4v1651692268868!5m2!1sen!2sus" width="" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198649.63541442878!2d-77.25717103594643!3d38.92625044229344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b0990faad959%3A0x4312e2dc603cee0c!2sDistrict%20of%20Columbia%20Water%20and%20Sewer%20Authority!5e0!3m2!1sen!2sus!4v1651692268868!5m2!1sen!2sus" width="90%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
    <script>
     /*
     If DC Water would like to replace this code with a Google maps API, they just need to sign up for the key
@@ -120,12 +122,36 @@ Next
 
 </script>
 <script>
+function allowButton() {
+    document.getElementById("ForColor").disabled=false;
+    if (document.getElementById("ColorChange").value ==null) {
+         document.getElementById("ForColor").style.background = "#DDDDDD";
+      } else {
+          document.getElementById("ForColor").disabled=false;
+         document.getElementById("ForColor").style.background = "#0075C9";
+      }
+      if (document.getElementById("ColorChange").value == null) {
+         document.getElementById("ForColorText").style.color = "Black";
+      } else {
+         document.getElementById("ForColorText").style.color = "White";
+      }
+    var Image_Id = document.getElementById('arrowBlack');
+            if (Image_Id.src.match("Images/ArrowBlack.png")) {
+                Image_Id.src = "Images/ArrowWhite.png";
+            }
+            if (document.getElementById('ColorChange').value== "")
+            {
+              Image_Id.src = "Images/ArrowBlack.png";
+            }
+}
+</script>
+<script>
         function changeImage() {
             var Image_Id = document.getElementById('arrowBlack');
             if (Image_Id.src.match("Images/ArrowBlack.png")) {
                 Image_Id.src = "Images/ArrowWhite.png";
             }
-            if (document.getElementById('ColorChange').value== "")
+            if (document.getElementById('ColorChange').value== null)
             {
               Image_Id.src = "Images/ArrowBlack.png";
             }

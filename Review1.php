@@ -78,6 +78,7 @@ document.getElementById("FirstTextBox").innerHTML = sessionStorage.getItem("Colo
 
 <div class="SecondBoxText" id="SecondBoxText">
 <script>
+document.getElementById("SecondBoxText").innerHTML = sessionStorage.getItem("inOut");
 document.getElementById("SecondBoxText").innerHTML = sessionStorage.getItem("problemType");
 </script> 
 </div>
@@ -118,7 +119,7 @@ document.getElementById("ThirdBoxText").innerHTML = sessionStorage.getItem("phot
  Back
 </span>
 </button>
-<button onclick="window.location='ThankYou.php' submitQuery()" type="button" class="nextButton" style="border-color: none;">
+<button onclick="window.location='ThankYou.php' submitQuery(); makeTicket();" type="button" class="nextButton" style="border-color: none;">
 <span class="nextButtonText">Next
 <img src="Images/ArrowWhite.png" class="WhiteArrow">
 </span>
@@ -136,6 +137,12 @@ if (inOrOut.toString()=="other") {
 }
 }
 </script>    
+<script>
+function makeTicket() {
+    var ticketNumValue="00-00000001"
+    sessionStorage.setItem('ticketNum8', ticketNumValue);
+}
+</script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
