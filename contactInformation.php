@@ -168,7 +168,7 @@
 
 <div class="bottomNav">
 
-<button onclick="#" type="button" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
+<button onclick="#" type="button" id="prevButton2" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
 <button onclick="location.href='Review1.php'" type="button" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
 
 </div>
@@ -179,10 +179,10 @@ pageDecide();
 function pageDecide(){
 let inOrout = sessionStorage.getItem('inOut'); 
 if(inOrout.toString()=="Other"){
-    document.getElementById("prevButton").setAttribute("onclick","location.href='unsure.php'");
+    document.getElementById("prevButton2").setAttribute("onclick","location.href='unsure.php'");
    
 }else{
-     document.getElementById("prevButton").setAttribute("onclick","location.href='additionalDetails.php'");
+     document.getElementById("prevButton2").setAttribute("onclick","location.href='additionalDetails.php'");
 }
 }
 </script>
