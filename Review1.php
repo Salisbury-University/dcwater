@@ -130,7 +130,7 @@ document.getElementById("ThirdBoxText").innerHTML = sessionStorage.getItem("phot
 <script>
 function pageDecide() {
 let inOrOut=sessionStorage.getItem("problemType");
-if (inOrOut.toString()=="other") {
+if (inOrOut.toString()=="Other") {
     window.location='unsure.php';
 } else {
     window.location='additionalDetails.php';
