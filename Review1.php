@@ -139,8 +139,8 @@ if (inOrOut.toString()=="other") {
 </script>    
 <script>
 function makeTicket() {
-    var ticketNumValue="00-00000001"
-    sessionStorage.setItem('ticketNum8', ticketNumValue);
+    var ticketNumValue="00-00000001";
+    sessionStorage.setItem('ticketNumDefault', ticketNumValue);
 }
 </script>
 
