@@ -82,7 +82,7 @@ function showPosition() {
 </script>
 </div>
 <div id="embedmap" class="embeddedmap">
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198649.63541442878!2d-77.25717103594643!3d38.92625044229344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b0990faad959%3A0x4312e2dc603cee0c!2sDistrict%20of%20Columbia%20Water%20and%20Sewer%20Authority!5e0!3m2!1sen!2sus!4v1651692268868!5m2!1sen!2sus" width="90%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+<iframe class="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d198649.63541442878!2d-77.25717103594643!3d38.92625044229344!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89b7b0990faad959%3A0x4312e2dc603cee0c!2sDistrict%20of%20Columbia%20Water%20and%20Sewer%20Authority!5e0!3m2!1sen!2sus!4v1651692268868!5m2!1sen!2sus" width="90%" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
    <script>
     /*
     If DC Water would like to replace this code with a Google maps API, they just need to sign up for the key
