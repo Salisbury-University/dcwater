@@ -117,7 +117,7 @@
         alert(evt.target.responseText);
       }
       function uploadFailed(evt) {
-        alert("Error sending file...");
+        alert("Error uploading file...");
       }
       function uploadCanceled(evt) {
         alert("Upload cancelled by the user or network error!");
