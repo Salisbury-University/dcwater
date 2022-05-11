@@ -154,19 +154,19 @@
    function writeName(){
     var fname = document.forms["nameText"]["fname"].value;
     sessionStorage.setItem('firstName',fname);
-    alert(fname);
+    
 }
 //javascript function that records the users response for the email and saves it to a session variable called email
  function writeEmail(){
     var email= document.forms["emailText"]["email"].value;
     sessionStorage.setItem('email',email);
-    alert(email);
+
 }
 //javascript function that records the users response for the phone number text box and saves it to a session variable called phone
  function writePhone(){
     var phoneNumber= document.forms["phoneText"]["phoneNum"].value;
     sessionStorage.setItem('phone',phoneNumber);
-    alert(phoneNumber);
+
 }
 
 </script>
