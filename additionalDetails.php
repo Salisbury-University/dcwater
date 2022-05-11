@@ -65,20 +65,22 @@
 //function that gets the picture from the user and saves the photo name and type to the to session variables
  function fileSelected() {
  
-      
+        var count = document.getElementById('cameraInput').files.length;
  
  
-             
+              for (var index = 0; index < count; index ++)
+              {
  
-              
+                     var file = document.getElementById('cameraInput').files[index];
  
-                     var file = document.getElementById('cameraInput').files;
+                    
+ 
                      sessionStorage.setItem('photoName',file.name); 
                      sessionStorage.setItem('photoType',file.type);  
                     
 
  
-              
+              }
                    
  
       }  
