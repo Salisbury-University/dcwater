@@ -141,6 +141,7 @@ if (inOrOut.toString()=="Other") {
 function makeTicket() {
     var ticketNumValue="00-00000001";
     sessionStorage.setItem('ticketNumDefault', ticketNumValue);
+    window.location='ThankYou.php';
 }
 </script>
 
@@ -177,6 +178,7 @@ $.post("uploadToServer.php",
         ticketNumber:ticketNum
        });
 sessionStorage.clear(); 
+window.location='ThankYou.php';
 }
 </script>
 
