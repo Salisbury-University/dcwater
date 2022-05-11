@@ -74,7 +74,7 @@ font-family: 'Fira Sans',sans-serif;
 <div style="margin-top: 15px; text-align: center;">
 <span class="resolvesmallText">Rate your experiance</span>  
 </div>
-
+<!--- the five star rating div, asks the user to print between 1-5 stars --->
 <div style="margin-top: 15px; text-align: center;" class="fiveStars">
       <input type="radio" name="rating1" id="rating1">
       <label for="rating1" class="fa fa-star"></label>
@@ -88,6 +88,7 @@ font-family: 'Fira Sans',sans-serif;
       <label for="rating5" class="fa fa-star"></label>
 </div>
 
+<!--- leave feedback button --->
 <div style="margin-top: 20px; text-align: center;">
 <button onclick="location.href='Feedback.php'" class="feedbackButton">Leave Feedback</button>
 </div>

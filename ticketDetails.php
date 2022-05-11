@@ -26,6 +26,8 @@
 
 
 <!---THIS IS THE TEXT UNDER REPORT AN EMERGENCY ---> 
+
+<!--- PAGE IS INCOMPLETE WILL FINISH WHEN DATABASE IS UP ---> 
 <div>
 <p id = "step">Ticket Status</p>
 </div>
@@ -48,7 +50,8 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript">
-    
+//jquery request based on a variable 
+//when database works this will be switched to based on the mysql 
  let ticketStatus = "ticketOpened" 
 if (ticketStatus.toString()=="ticketOpened") {
     $(".progContainer").load("ticketOpened.php");
@@ -66,7 +69,7 @@ if (ticketStatus.toString()=="ticketClosed") {
 
 </script>
 </div>
-
+<!--- button forms that will either display caseHistory.php or ticket.php depending on what button is pushed --->
 <div style="margin-left: 16px; margin-top: 30px;" id="buttonDiv">
     <button id="caseHistoryAction" type="button" class ="caseButton active">Case History</button>
     <button id="ticketHistoryAction" type="button" class = "caseButton">Ticket History</button>
@@ -81,6 +84,7 @@ if (ticketStatus.toString()=="ticketClosed") {
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 <script type="text/javascript">
+    //jquery function that loads a page based on the button pushed
     $(document).ready(function (){
          $("#textData").load("caseHistory.php");
         $("#caseHistoryAction").click(function (e) {
