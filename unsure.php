@@ -158,15 +158,14 @@ let inOut = sessionStorage.getItem('inOut');
 if(inOut.toString()=="Outdoor"){
     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3Out.php'");
    
-}
-if(inOut.toString()=="Indoor"){
+}else if(inOut.toString()=="Indoor"){
     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3In.php'");
    
-}
-if(inOut.toString()=="Other"){
+}else{
     document.getElementById("prevButton").setAttribute("onclick","location.href='Step2.php'");
-   
 }
+   
+
 
 
 }); 
