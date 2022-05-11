@@ -46,14 +46,16 @@
 </div>
 
 <div style="margin-top:22.5px; margin-left: 16px;">
+<!--- first checkbox form that asks the user if they would like to recieve updates about the ticket    --->
    <form>
   <div class="checkboxes">
     <label><input type="checkbox" id="checkboxPhoneOne"> <span>Phone Call</span></label>
-    <label><input type="checkbox" id="checkboxPhoneTwo"> <span>Email</span></label>
+    <label><input type="checkbox" id="checkboxEmailOne"> <span>Email</span></label>
   </div>
 </form>
 </div>
 <script type="text/javascript">
+    //javascript function that resonds to the checkboxes and saves it into a session variable
     $(document).ready(function () {
         var moreInfo = " "; 
      $('#checkboxPhoneOne').change(function () {
@@ -86,7 +88,7 @@
 <div style="margin-top:20px;">
     <span class = "regText">DC Water can contact me with questions about this ticket</span>
 </div>
-
+<!--- checkbox form that asks the user if they want DC water to contact them --->
 <div style="margin-top:22.5px; margin-left: 16px;">
    <form>
   <div class="checkboxes">
@@ -96,6 +98,7 @@
 </form>
 </div>
 <script type="text/javascript">
+//function that records the users checkbox response and adds it to a session variable
     $(document).ready(function () {
         var contactQuestion = " "; 
      $('#checkboxPhoneTwo').change(function () {
@@ -122,7 +125,7 @@
         });
   });
     </script>
-
+<!--- Name text box ---> 
 <div style="margin-top:20px; margin-left: 16px;">
     <form name="nameText" method="post">
 <label for="fname" class="boxLabel">Full Name</label>
@@ -130,6 +133,8 @@
 </form>
 
 </div>
+
+<!--- Email text box --->
 <div style="margin-top:20px; margin-left: 16px;">
   <form name="emailText" method="post">   
 <label for="fname" class="boxLabel">Email</label>
@@ -137,7 +142,7 @@
 </form>
 
 </div>
-
+<!--- Phone Number Text Box --->
 <div style="margin-top:20px; margin-left: 16px; margin-bottom: 100px;">
  <form name="phoneText" method="post"> 
 <label for="fname" class="boxLabel">Phone Number</label>
@@ -145,16 +150,19 @@
 </form>
 </div>
 <script type="text/javascript">
+//javascript function that records the users response for name and saves it to a session variable called firstName
    function writeName(){
     var fname = document.forms["nameText"]["fname"].value;
     sessionStorage.setItem('firstName',fname);
     alert(fname);
 }
+//javascript function that records the users response for the email and saves it to a session variable called email
  function writeEmail(){
     var email= document.forms["emailText"]["email"].value;
     sessionStorage.setItem('email',email);
     alert(email);
 }
+//javascript function that records the users response for the phone number text box and saves it to a session variable called phone
  function writePhone(){
     var phoneNumber= document.forms["phoneText"]["phoneNum"].value;
     sessionStorage.setItem('phone',phoneNumber);
@@ -164,7 +172,7 @@
 </script>
 
 
-<!--- PUT CONTENT HERE---> 
+
 
 <div class="bottomNav">
 

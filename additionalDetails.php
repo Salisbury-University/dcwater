@@ -65,23 +65,20 @@
 //function that gets the picture from the user and saves the photo name and type to the to session variables
  function fileSelected() {
  
-        var count = document.getElementById('cameraInput').files.length;
+      
  
  
-              for (var index = 0; index < count; index ++)
+             
  
-              {
+              
  
-                     var file = document.getElementById('cameraInput').files[index];
- 
-                    
- 
+                     var file = document.getElementById('cameraInput').files;
                      sessionStorage.setItem('photoName',file.name); 
                      sessionStorage.setItem('photoType',file.type);  
                     
 
  
-              }
+              
                    
  
       }  
@@ -186,11 +183,9 @@ function writeText(){
 </div>
 </body>
 <script type="text/javascript">
-//pageDecide is called when the page is loaded
-pageDecide(); 
-
 //function that decides what page the previous button sends the user based off of previous session variables
-function pageDecide(){
+ $(document).ready(function () {
+
 let inOrout = sessionStorage.getItem('problemType'); 
 if(inOrout.toString()=="Damage"|| inOrout.toString()=="OutFlood" ){
     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3Out.php'");
@@ -198,7 +193,7 @@ if(inOrout.toString()=="Damage"|| inOrout.toString()=="OutFlood" ){
 }else{
      document.getElementById("prevButton").setAttribute("onclick","location.href='Step3In.php'");
 }
-}
+});
 </script>
 </html>
 

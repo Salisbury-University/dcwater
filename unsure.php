@@ -30,13 +30,13 @@
 <p id = "step">Problem Details</p>
 </div>
 
-<!--- THE CONTENT DEPENDS ON THE PAGE. SOME PAGES DONT EVEN 
-HAVE THIS TEXT SO CHECK WITH THE PAGE> ---> 
+
 
 
 
 <hr align="left">
 
+<!-- add a photo form that lets the user add a photo with the add a photo button and have it upload to the server with the Upload button --->
 <div style="margin-top: 20px;" >
     <span class = "bold">Add A Photo</span>
 </div>
@@ -60,32 +60,21 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
 </form>
 </div>
 <script type="text/javascript">
+//function that gets the picture from the user and saves the photo name and type to the to session variables
  function fileSelected() {
  
         var count = document.getElementById('cameraInput').files.length;
  
  
               for (var index = 0; index < count; index ++)
- 
               {
  
                      var file = document.getElementById('cameraInput').files[index];
  
-                     var fileSize = 0;
- 
-                     if (file.size > 1024 * 1024)
- 
-                            fileSize = (Math.round(file.size * 100 / (1024 * 1024)) / 100).toString() + 'MB';
- 
-                     else
- 
-                            fileSize = (Math.round(file.size * 100 / 1024) / 100).toString() + 'KB';
+                    
  
                      sessionStorage.setItem('photoName',file.name); 
-                     sessionStorage.setItem('photoType',file.type);
-                     sessionStorage.setItem('photoSize',fileSize); 
-                     alert(file.name);
-
+                     sessionStorage.setItem('photoType',file.type);  
                     
 
  
@@ -94,8 +83,8 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
  
       }  
 
+//function that uploads the file to savetofile.php and returns a response to the user if it is subnitted correctly
   function uploadFile() {
-    alert("click");
  
         var fd = new FormData();
  
@@ -112,15 +101,17 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
               }
  
         var xhr = new XMLHttpRequest();
- 
-        xhr.open("POST", "savetofile.php");
         xhr.addEventListener("load", uploadComplete, false);
         xhr.addEventListener("error", uploadFailed, false);
         xhr.addEventListener("abort", uploadCanceled, false);
+        xhr.open("POST", "savetofile.php");
+
         xhr.send(fd);
  
-      }   
-       function uploadComplete(evt) {
+      }
+
+//functions that alerts the user a message if submitted
+      function uploadComplete(evt) {
         alert(evt.target.responseText);
       }
       function uploadFailed(evt) {
@@ -128,10 +119,10 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
       }
       function uploadCanceled(evt) {
         alert("Upload cancelled by the user or network error!");
-      }        
-
+      }            
 </script>
 
+<!--- description form that gets a description of the problem from the user --->
 <div style="margin-top:20px;">
      <span class = "bold">Desription<span style="color:red;">*</span></span>
 </div>
@@ -142,10 +133,11 @@ HAVE THIS TEXT SO CHECK WITH THE PAGE> --->
     </form>
 </div>
 <script type="text/javascript">
+//javascript function that records the users response to the description form and saves it to a session variable called descriptionOfProblem
 function writeText(){
     var description = document.forms["textForm"]["description"].value;
     sessionStorage.setItem('descriptionOfProblem',description);
-    alert(description);
+
 }
 </script>
 
@@ -155,20 +147,28 @@ function writeText(){
 <button onclick="location.href='contactInformation.php'" type="button" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
 
 </div>
-
-
 </body>
 <script type="text/javascript">
-pageDecide();   
-function pageDecide(){
-let inOrout = sessionStorage.getItem('problemType'); 
-if(inOrout.toString()=="Damages"|| inOrout.toString()=="OutFlood" ){
+//javascript function that changes the onclick function of the previous button based on previous session variables
+$(document).ready(function () {
+
+let inOut = sessionStorage.getItem('inOut');
+if(inOut.toString()=="Outdoor"){
     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3Out.php'");
    
-}else{
-     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3In.php'");
 }
+if(inOut.toString()=="Indoor"){
+    document.getElementById("prevButton").setAttribute("onclick","location.href='Step3In.php'");
+   
 }
+if(inOut.toString()=="Other"){
+    document.getElementById("prevButton").setAttribute("onclick","location.href='Step2.php'");
+   
+}
+
+
+}); 
+
 </script>
 </html>
 
