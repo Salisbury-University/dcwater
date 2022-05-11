@@ -177,13 +177,16 @@
 pageDecide(); 
 //function that decides what page the previous button sends the user based off of previous session variables
 function pageDecide(){
-let inOrout = sessionStorage.getItem('inOut'); 
-if(inOrout.toString()=="Other"){
-    document.getElementById("prevButton2").setAttribute("onclick","location.href='unsure.php'");
-   
+
+let inOut = sessionStorage.getItem('inOut'); 
+if(inOut.toString()=="Other"){
+
+    document.getElementById("prevButton2").setAttribute("onclick","location.href='unsure.php'"); 
 }else{
-     document.getElementById("prevButton2").setAttribute("onclick","location.href='additionalDetails.php'");
+     document.getElementById("prevButton2").setAttribute("onclick","location.href='additionalDetails.php'"); 
 }
+
+
 }
 </script>
 </body>
