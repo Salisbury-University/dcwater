@@ -108,6 +108,7 @@
         xhr.addEventListener("abort", uploadCanceled, false);
         xhr.open("POST", "savetofile.php");
 
+
         xhr.send(fd);
  
       }
@@ -117,7 +118,7 @@
         alert(evt.target.responseText);
       }
       function uploadFailed(evt) {
-        alert("Error sendin file...");
+        alert("Error uploading file...");
       }
       function uploadCanceled(evt) {
         alert("Upload cancelled by the user or network error!");
