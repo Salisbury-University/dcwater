@@ -140,8 +140,8 @@ function writeText(){
     var description = document.forms["textForm"]["description"].value;
     sessionStorage.setItem('descriptionOfProblem',description);
     document.getElementById("nextButtonDisabled").disabled = false;
-     var disabledButton = document.getElementById('nextButtonDisabled');
-                     disabledButton.src = "Images/ArrowWhite.png";
+     var disabledButton = document.getElementById('nextArrow');
+     disabledButton.src = "Images/ArrowWhite.png";
 
 
 }
@@ -150,7 +150,7 @@ function writeText(){
 <div class="bottomNav">
 
 <button onclick="location.href='Step2.php'" type="button" id = "prevButton" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
-<button onclick="location.href='contactInformation.php'" type="button" class="nextButton"  id="nextButtonDisabled" disabled><span class="nextButtonText">Next<img src="Images/ArrowBlack.png" class="nextArrow"></span></button>
+<button onclick="location.href='contactInformation.php'" type="button" class="nextButton"  id="nextButtonDisabled" disabled><span class="nextButtonText">Next<img src="Images/ArrowBlack.png" class="nextArrow" id="nextArrow"></span></button>
 
 </div>
 </body>
