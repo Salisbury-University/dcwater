@@ -145,7 +145,7 @@ function writeText(){
 
 <div class="bottomNav">
 
-<button onclick="#" type="button" id = "prevButton" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
+<button onclick="location.href='Step2.php'" type="button" id = "prevButton" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
 <button onclick="location.href='contactInformation.php'" type="button" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
 
 </div>
@@ -158,15 +158,11 @@ let inOut = sessionStorage.getItem('inOut');
 if(inOut.toString()=="Outdoor"){
     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3Out.php'");
    
-}else if(inOut.toString()=="Indoor"){
+}
+ if(inOut.toString()=="Indoor"){
     document.getElementById("prevButton").setAttribute("onclick","location.href='Step3In.php'");
    
-}else{
-    document.getElementById("prevButton").setAttribute("onclick","location.href='Step2.php'");
 }
-   
-
-
 
 }); 
 
