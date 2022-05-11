@@ -174,11 +174,11 @@
 </div>
 <script type="text/javascript">
 //pageDecide is called when the page is loaded
-pageDecide(); 
-//function that decides what page the previous button sends the user based off of previous session variables
-function pageDecide(){
 
-let inOut = sessionStorage.getItem('inOut'); 
+//function that decides what page the previous button sends the user based off of previous session variables
+ $(document).ready(function () {
+
+let inOut = sessionStorage.getItem('problemType'); 
 if(inOut.toString()=="Other"){
 
     document.getElementById("prevButton2").setAttribute("onclick","location.href='unsure.php'"); 
@@ -187,7 +187,7 @@ if(inOut.toString()=="Other"){
 }
 
 
-}
+});
 </script>
 </body>
 </html>
