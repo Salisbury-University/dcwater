@@ -119,7 +119,7 @@ document.getElementById("ThirdBoxText").innerHTML = sessionStorage.getItem('phot
  Back
 </span>
 </button>
-<button onclick="window.location='ThankYou.php' submitQuery(); makeTicket();" type="button" class="nextButton" style="border-color: none;">
+<button onclick="window.location='ThankYou.php'" id="NextButton" type="button" class="nextButton" style="border-color: none;">
 <span class="nextButtonText">Next
 <img src="Images/ArrowWhite.png" class="WhiteArrow">
 </span>
@@ -138,16 +138,16 @@ if (inOrOut.toString()=="Other") {
 }
 </script>    
 <script>
-function makeTicket() {
+document.getElementById('NextButton')function makeTicket() {
     var ticketNumValue="00-00000001";
     sessionStorage.setItem('ticketNumDefault', ticketNumValue);
     window.location='ThankYou.php';
-}
+};
 </script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 <script type="text/javascript">
-	function submitQuery(){
+document.getElementById('NextButton')function submitQuery(){
 //session storage variables from location page 
 		let locationOf = sessionStorage.getItem('ColorChange');
 //session storage variables from Step3 page
