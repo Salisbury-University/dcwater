@@ -96,11 +96,11 @@ document.getElementById("SecondBoxText").innerHTML = sessionStorage.getItem("pro
 </div>
 <div id ="ThirdBoxText"class="ThirdBoxText">
 <script>
-if (sessionStorage.getItem("photoName")==null) {
+if (sessionStorage.getItem('photoName')=="") {
     var none="None";
     document.getElementById("ThirdBoxText").innerHTML=none;
 } else {
-document.getElementById("ThirdBoxText").innerHTML = sessionStorage.getItem("photoName");
+document.getElementById("ThirdBoxText").innerHTML = sessionStorage.getItem('photoName');
 }
 </script> 
 </div>
