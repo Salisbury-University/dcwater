@@ -135,10 +135,12 @@
     </form>
 </div>
 <script type="text/javascript">
-//javascript function that records the users response to the description form and saves it to a session variable called descriptionOfProblem
+//javascript function that records the users response to the description form and saves it to a session variable called descriptionOfProblem and enables the next button
 function writeText(){
     var description = document.forms["textForm"]["description"].value;
     sessionStorage.setItem('descriptionOfProblem',description);
+    document.getElementById("nextButtonDisabled").disabled = false;
+
 
 }
 </script>
@@ -146,7 +148,7 @@ function writeText(){
 <div class="bottomNav">
 
 <button onclick="location.href='Step2.php'" type="button" id = "prevButton" class="prevButton"><span class="prevButtonText"><img src="Images/PrevArrow.png" class ="prevArrow">Back</span></button>
-<button onclick="location.href='contactInformation.php'" type="button" class="nextButton"><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
+<button onclick="location.href='contactInformation.php'" type="button" class="nextButton"  id="nextButtonDisabled" disabled><span class="nextButtonText">Next<img src="Images/nextArrow.png" class="nextArrow"></span></button>
 
 </div>
 </body>
